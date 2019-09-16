@@ -1,0 +1,136 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/mdp/team/team3obj_5.nm --prop models/mdp/team/team3obj_5_pareto.pctl --multiobjective:precision 0.001 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 13.385s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+Labels: 	4
+   * init -> 1 state(s)
+   * task2_compl -> 52200 state(s)
+   * deadlock -> 0 state(s)
+   * task1_compl -> 52200 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F "task1_compl"], R[exp]{"w_1_total"}max=? [C], Pmax=? [F "task2_compl"]) ...
+Preprocessing done in 1406.573s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [F "task1_compl"], R[exp]{"w_1_total"}max=? [C], Pmax=? [F "task2_compl"])
+
+Objectives:
+--------------------------------------------------------------
+000000Pmax=? [F "task1_compl"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective1 (positive), 	time bounds: none)
+00R[exp]{"w_1_total"}max=? [C] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective2 (positive), 	time bounds: none)
+000000Pmax=? [F "task2_compl"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective3 (positive), 	time bounds: none)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  w_1_total
+Labels: 	4
+   * init -> 1 state(s)
+   * task2_compl -> 52200 state(s)
+   * deadlock -> 0 state(s)
+   * task1_compl -> 52200 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	907993
+Transitions: 	1084752
+Choices: 	1078873
+Reward Models:  objective3, objective1, objective2
+Labels: 	4
+   * task2_compl -> 52200 state(s)
+   * init -> 1 state(s)
+   * task1_compl -> 52200 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+ WARN (SparsePcaaQuery.cpp:120): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 2.52392e-13.
+ WARN (SparsePcaaQuery.cpp:120): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 7.92112e-14.
+ WARN (SparsePcaaQuery.cpp:120): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 8.94953e-15.
+Solving multi-objective query took 1429.948s seconds (consisting of 1406.573s seconds for preprocessing and 23.366s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   (         1,          1,          0) * x <= 3.79592
+   (         0,          1,          0) * x <= 2.89796
+   (         1,        0.5,          0) * x <= 2.38776
+   (         1,   0.150037,   0.699925) * x <= 1.88781
+   (2.27366e-11,          1,          0) * x <= 2.89796
+   (  0.440214,          1,   0.440214) * x <= 3.63464
+   (7.60333e-11,          1,          0) * x <= 2.89796
+   (         0,        0.5,          1) * x <= 2.38776
+   (         0,          0,          1) * x <= 1
+   (         0,   0.499811,          1) * x <= 2.38723
+   (         1,          0,          0) * x <= 1
+   (         1, 2.06166e-11,          1) * x <= 1.67347
+   (         0,          1,          1) * x <= 3.79592
+   (         1,          0,          1) * x <= 1.67347
+   (         1, 4.01968e-11,          1) * x <= 1.67347
+   (0.000378215,   0.499811,          1) * x <= 2.38748
+   (         1, 4.40481e-12,          1) * x <= 1.67347
+   (         1,          0,   0.157495) * x <= 1.10607
+   ( 0.0950542,   0.904946,          1) * x <= 3.59417
+   (         1,          0,          1) * x <= 1.67347
+   (         0,   0.904955,          1) * x <= 3.52824
+
+Overapproximation of achievable values: Polytope with 12 Halfspaces:
+   (         1,          0,          0) * x <= 1
+   (         0,          1,          0) * x <= 2.89796
+   (         0,          0,          1) * x <= 1
+   (       0.5, 9.8471e-13,        0.5) * x <= 0.836735
+   (       0.5,          0,        0.5) * x <= 0.836735
+   (  0.494505,   0.505495,          0) * x <= 1.90895
+   (         0,   0.454545,   0.545455) * x <= 1.81447
+   (  0.545455,   0.454545,          0) * x <= 1.81447
+   (         0,        0.5,        0.5) * x <= 1.89796
+   (  0.666667,   0.333333,          0) * x <= 1.59184
+   (         0,   0.333333,   0.666667) * x <= 1.59184
+   (       0.5,        0.5,          0) * x <= 1.89796
+
+10 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.693877551, 2.816326531, 0.9795918367 )
+   (0.693877551, 2.816326531, 0.9795918367 )
+   (0000000001, 2.775510204, 0.6734693878 )
+   (0.8979591837, 2.897959184, 0.7755102041 )
+   (0.6734693878, 2.775510204, 0000000001 )
+   (0.6734693878, 2.775510204, 0000000001 )
+   (0.7755102041, 2.897959184, 0.8979591837 )
+   (0.874829932, 2.897959184, 0.7986394558 )
+   (0.9795918367, 2.816326531, 0.693877551 )
+   (0000000001, 2.775510204, 0.6734693878 )
+
+
+Time for model checking: 1429.957s.
+
+Performance statistics:
+  * peak memory usage: 579MB
+  * CPU time: 1435.464s
+  * wallclock time: 1443.451s
+
+real	24m3.489s
+user	23m55.464s
+sys	0m3.276s

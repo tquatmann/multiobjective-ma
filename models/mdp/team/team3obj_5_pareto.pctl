@@ -1,0 +1,1 @@
+ multi(Pmax=? [ F "task1_compl" ], R{"w_1_total"}max=? [ C ], Pmax=? [ F "task2_compl" ]) 

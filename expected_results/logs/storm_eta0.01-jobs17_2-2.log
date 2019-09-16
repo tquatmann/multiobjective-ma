@@ -1,0 +1,83 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/jobs/jobs17_2.ma --prop models/ma/jobs/jobs2.csl --multiobjective:precision 0.01 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 276.393s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate.: 	5.9
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * half_of_jobs_finished -> 704990 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(T[exp]min=? [F "all_jobs_finished"], Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"]) ...
+Preprocessing done in 8.052s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"])
+
+Objectives:
+--------------------------------------------------------------
+T[exp]min=? [F "all_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds: none)
+Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective2 (positive), 	time bounds:<=0000(17 / (4 * 2)))
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate.: 	5.9
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * half_of_jobs_finished -> 704990 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate.: 	5.9
+Reward Models:  objective2, objective1
+Labels: 	4
+   * init -> 1 state(s)
+   * half_of_jobs_finished -> 704990 state(s)
+   * deadlock -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+real	120m0.076s
+user	119m30.152s
+sys	0m13.908s

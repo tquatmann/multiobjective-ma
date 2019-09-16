@@ -1,0 +1,2 @@
+// Probability that process 1 enters its critical section within 1 time unit
+multi(Pmax=? [F<=0.5 "crit1"])

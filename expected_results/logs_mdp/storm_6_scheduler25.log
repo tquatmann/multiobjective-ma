@@ -1,0 +1,26 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/mdp/scheduler/scheduler25.nm --prop models/mdp/scheduler/scheduler25_pareto.pctl --multiobjective:precision 0.001 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 6.197s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	633735
+Transitions: 	1179444
+Choices: 	1168375
+Reward Models:  time, energy
+Labels: 	2
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Model checking property multi(R[exp]{"energy"}min=? [C], R[exp]{"time"}min=? [C]) ...
+ERROR (SparsePcaaPreprocessor.cpp:391): Infinite Rewards: For every scheduler, the induced reward for one or more of the objectives that minimize rewards is infinity.
+ERROR (storm.cpp:39): An exception caused Storm to terminate. The message of the exception is: Infinite Rewards: For every scheduler, the induced reward for one or more of the objectives that minimize rewards is infinity.
+
+real	0m7.142s
+user	0m6.860s
+sys	0m0.252s

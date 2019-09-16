@@ -1,0 +1,2 @@
+//Probability that half of the jobs are finished within N/(4K) time units
+Pmax=? [ F<=(N/(4*K)) "half_of_jobs_finished"]

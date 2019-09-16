@@ -1,0 +1,2 @@
+// Probability for a buffer underrun within two time units
+multi(Pmin=? [true U<=2 "underrun"])

@@ -1,0 +1,2 @@
+// expected  number of processed jobs of Station i (i in {1,2} until its queue is full (scaled with 0.1, as in Guck et. al, ATVA'14)
+multi(R{"processedjobs1"}max=? [ F "q1full"], R{"processedjobs2"}max=? [ F "q2full"])

@@ -1,0 +1,125 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Apr 13 08:54:02 EDT 2017
+Hostname: storm-eval
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism models/mdp/scheduler/scheduler25.nm models/mdp/scheduler/scheduler25_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g
+
+Parsing model file "models/mdp/scheduler/scheduler25.nm"...
+
+Parsing properties file "models/mdp/scheduler/scheduler25_pareto.pctl"...
+
+1 property:
+(1) multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+Type:        MDP
+Modules:     scheduler P1 P2 
+Variables:   task1 task2 task3 task4 task5 task6 p1 c1 x1 p2 c2 x2 
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 419 iterations in 7.28 seconds (average 0.017384, setup 0.00)
+
+Time for model construction: 7.472 seconds.
+
+Type:        MDP
+States:      633735 (1 initial)
+Transitions: 1179444
+Choices:     1168375
+
+Transition matrix: 25430 nodes (5 terminal), 1179444 minterms, vars: 35r/35c/10nd
+
+States:      633735 (1 initial)
+Transitions: 1179444
+Choices:     1168375
+
+Transition matrix: 25430 nodes (5 terminal), 1179444 minterms, vars: 35r/35c/10nd
+
+Prob0A: 1 iterations in 0.01 seconds (average 0.008000, setup 0.00)
+
+yes = 0, no = 0, maybe = 633735
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 1033 iterations in 34.51 seconds (average 0.033398, setup 0.01)
+Iterative method: 552 iterations in 20.43 seconds (average 0.037000, setup 0.01)
+Iterative method: 879 iterations in 46.42 seconds (average 0.052801, setup 0.01)
+Iterative method: 594 iterations in 20.14 seconds (average 0.033899, setup 0.00)
+Iterative method: 1009 iterations in 39.54 seconds (average 0.039175, setup 0.01)
+Iterative method: 524 iterations in 19.12 seconds (average 0.036481, setup 0.01)
+Iterative method: 790 iterations in 26.06 seconds (average 0.032982, setup 0.00)
+Iterative method: 1005 iterations in 34.83 seconds (average 0.034651, setup 0.01)
+Iterative method: 1025 iterations in 37.19 seconds (average 0.036285, setup 0.00)
+Iterative method: 541 iterations in 19.69 seconds (average 0.036392, setup 0.00)
+Iterative method: 577 iterations in 22.31 seconds (average 0.038655, setup 0.01)
+Iterative method: 659 iterations in 22.85 seconds (average 0.034677, setup 0.00)
+Iterative method: 822 iterations in 38.40 seconds (average 0.046715, setup 0.00)
+Iterative method: 542 iterations in 18.85 seconds (average 0.034753, setup 0.01)
+Iterative method: 540 iterations in 22.78 seconds (average 0.042178, setup 0.00)
+The value iteration(s) took 423.999 seconds altogether.
+Number of weight vectors used: 15
+Computed 12 points altogether:
+
+[(-1.3869925925925894, -20.045432098765176), (-1.3950814814814783, -16.476049382715875), (-1.4022518518518479, -16.124444444444276), (-1.3861777777777742, -20.83111111111084), (-1.3861777777777733, -21.275555555555272), (-1.4187703703703654, -15.936790123456623), (-1.4305481481481428, -15.886419753086253), (-1.4141580246913534, -15.979917695473084), (-1.4051111111111072, -16.072098765431928), (-1.403190123456786, -16.106502057613), (-1.4424592592592531, -15.84049382716033), (-1.4545037037036967, -15.799012345678848)]
+Multi-objective value iterations took 423.999 s.
+
+Value in the initial state: [(1.3869925925925894,20.045432098765176),
+(1.3950814814814783,16.476049382715875),
+(1.3950814814814783,16.476049382715875),
+(1.4022518518518479,16.124444444444276),
+(1.3861777777777742,20.83111111111084),
+(1.3869925925925894,20.045432098765176),
+(1.3861777777777733,21.275555555555272),
+(1.3861777777777742,20.83111111111084),
+(1.4187703703703654,15.936790123456623),
+(1.4305481481481428,15.886419753086253),
+(1.4141580246913534,15.979917695473084),
+(1.4187703703703654,15.936790123456623),
+(1.4051111111111072,16.072098765431928),
+(1.4141580246913534,15.979917695473084),
+(1.403190123456786,16.106502057613),
+(1.4051111111111072,16.072098765431928),
+(1.4022518518518479,16.124444444444276),
+(1.403190123456786,16.106502057613),
+(1.4424592592592531,15.84049382716033),
+(1.4545037037036967,15.799012345678848),
+(1.4305481481481428,15.886419753086253),
+(1.4424592592592531,15.84049382716033)]
+
+Time for model checking: 431.116 seconds.
+
+Result: [(1.3869925925925894,20.045432098765176),
+(1.3950814814814783,16.476049382715875),
+(1.3950814814814783,16.476049382715875),
+(1.4022518518518479,16.124444444444276),
+(1.3861777777777742,20.83111111111084),
+(1.3869925925925894,20.045432098765176),
+(1.3861777777777733,21.275555555555272),
+(1.3861777777777742,20.83111111111084),
+(1.4187703703703654,15.936790123456623),
+(1.4305481481481428,15.886419753086253),
+(1.4141580246913534,15.979917695473084),
+(1.4187703703703654,15.936790123456623),
+(1.4051111111111072,16.072098765431928),
+(1.4141580246913534,15.979917695473084),
+(1.403190123456786,16.106502057613),
+(1.4051111111111072,16.072098765431928),
+(1.4022518518518479,16.124444444444276),
+(1.403190123456786,16.106502057613),
+(1.4424592592592531,15.84049382716033),
+(1.4545037037036967,15.799012345678848),
+(1.4305481481481428,15.886419753086253),
+(1.4424592592592531,15.84049382716033)] (value in the initial state)
+
+
+real	7m19.811s
+user	7m19.464s
+sys	0m0.776s

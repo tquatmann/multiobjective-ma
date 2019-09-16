@@ -1,0 +1,2 @@
+// Expected buffering time until the playback is done
+multi(R[exp]{"buffering"}min=? [F "done"])

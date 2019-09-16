@@ -1,0 +1,37 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/polling/polling.ma -const N=3,Q=3 --prop models/ma/polling/singleobjective/polling1_single.csl -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.122s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9858
+Transitions: 	24872
+Choices: 	18463
+Markovian St.: 	4969
+Max. Rate.: 	14
+Reward Models:  processedjobs1
+Labels: 	3
+   * init -> 1 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 5373 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.002s.
+
+
+Model checking property R[exp]{"processedjobs1"}max=? [F "q1full"] ...
+Result (initial states): 0.9028238636
+Time for model checking: 0.042s.
+
+Performance statistics:
+  * peak memory usage: 216MB
+  * CPU time: 0.112s
+  * wallclock time: 0.171s
+
+real	0m0.185s
+user	0m0.116s
+sys	0m0.068s

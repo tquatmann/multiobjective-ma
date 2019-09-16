@@ -1,0 +1,32 @@
+ ------------------------------------------------------------------- 
+|                  Interactive Markov Chain Analyzer                |
+|                        IMCA Version 1.6 beta                      |
+|             Binary build date: Jan 31 2017 @ 07:43:28             |
+|                using SoPlex "http://soplex.zib.de/"               |
+|                                                                   |
+|                  Copyright (C) RWTH Aachen, 2012.                 |
+|          Copyright (C) University of Twente, 2013-2014.           |
+|                         Author: Dennis Guck                       |
+|           IMCA is distributed under the GPL conditions            |
+|            (GPL stands for GNU General Public License)            |
+|          This program comes with ABSOLUTELY NO WARRANTY.          |
+|   This is free software, and you are welcome to redistribute it   |
+ ------------------------------------------------------------------- 
+
+Loading the 'models/ma/jobs/imca/jobs12_3-1.ma' file, please wait.
+Maximum State Reward: 0
+#States: 116814    #MS: 112719    #PS: 4095    #ND: 3797
+#Initials: 1    #Goals: 1    #Transitions: 450783
+The occupied space is 19045088 Bytes (~18.162811 MB).
+
+
+Compute minimal expected time, please wait.
+LP solved to optimality.
+
+Minimal expected time: 2.712648718
+
+Computation Time: 934.428075 seconds
+
+real	15m35.506s
+user	15m32.056s
+sys	0m3.344s

@@ -1,0 +1,3 @@
+// expected  number of processed jobs of Station i (i in {1,2}) until its queue is full (scaled with 0.1, as in Guck et. al, ATVA'14) and
+// Probability that queue i (for i in {1,2}) gets full within two time units
+multi(R{"processedjobs1"}max=? [ F "q1full"], R{"processedjobs2"}max=? [ F "q2full"], Pmin=? [F<=2 "q1full"], Pmin=? [F<=2 "q2full"])

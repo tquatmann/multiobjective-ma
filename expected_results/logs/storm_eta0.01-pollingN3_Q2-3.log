@@ -1,0 +1,109 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/polling/polling.ma --prop models/ma/polling/polling3.csl -const N=3,Q=2 --multiobjective:precision 0.01 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.079s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1020
+Transitions: 	2507
+Choices: 	1867
+Markovian St.: 	523
+Max. Rate.: 	14
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 576 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 576 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 0.001s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+Objectives:
+--------------------------------------------------------------
+000Pmin=? [true U<=2 "q1full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds:<=00002)
+000Pmin=? [true U<=2 "q2full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds:<=00002)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1020
+Transitions: 	2477
+Choices: 	1852
+Markovian St.: 	508
+Max. Rate.: 	14
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 576 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 576 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1980
+Transitions: 	5183
+Choices: 	3853
+Markovian St.: 	871
+Max. Rate.: 	14
+Reward Models:  objective2, objective1
+Labels: 	4
+   * q2full -> 828 state(s)
+   * init -> 1 state(s)
+   * q1full -> 828 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 62.670s seconds (consisting of 0.001s seconds for preprocessing and 62.669s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (  -0.55063,         -1) * x <= -1.33969
+   (         0,         -1) * x <= -0.92933
+   (        -1,          0) * x <= -0.72432
+   (-0.0136746,         -1) * x <= -0.940712
+
+Overapproximation of achievable values: Polytope with 4 Halfspaces:
+   (        -1,          0) * x <= -0.719518
+   (         0,         -1) * x <= -0.922966
+   ( -0.261756,  -0.738244) * x <= -0.876485
+   ( -0.680423,  -0.319577) * x <= -0.788737
+
+3 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.8323624509, 0.9293300904 )
+   (0.7430406269, 0.9305515333 )
+   (0.7243195543, 0.9408599217 )
+
+
+Time for model checking: 62.671s.
+
+Performance statistics:
+  * peak memory usage: 214MB
+  * CPU time: 62.712s
+  * wallclock time: 62.754s
+
+real	1m2.769s
+user	1m2.716s
+sys	0m0.048s

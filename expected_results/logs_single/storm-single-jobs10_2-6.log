@@ -1,0 +1,37 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/jobs/jobs10_2.ma --prop models/ma/jobs/singleobjective/jobs2_single.csl --precision 0.01 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.272s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  none
+Labels: 	3
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * half_of_jobs_finished -> 2772 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property Pmax=? [true U<=(10 / (4 * 2)) "half_of_jobs_finished"] ...
+Result (initial states): 0.7088926861
+Time for model checking: 0.896s.
+
+Performance statistics:
+  * peak memory usage: 215MB
+  * CPU time: 1.148s
+  * wallclock time: 1.178s
+
+real	0m1.192s
+user	0m1.148s
+sys	0m0.040s

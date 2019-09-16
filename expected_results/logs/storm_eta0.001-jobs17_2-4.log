@@ -1,0 +1,89 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/jobs/jobs17_2.ma --prop models/ma/jobs/jobs4.csl --multiobjective:precision 0.001 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 267.698s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate.: 	5.9
+Reward Models:  avg_waiting_time
+Labels: 	5
+   * deadlock -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+   * half_of_jobs_finished -> 704990 state(s)
+   * slowest_before_fastest -> 1138689 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"], Pmax=? [true U<=(17 / (2 * 2)) "all_jobs_finished"], Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"]) ...
+Preprocessing done in 18.445s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"], Pmax=? [true U<=(17 / (2 * 2)) "all_jobs_finished"], Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"])
+
+Objectives:
+--------------------------------------------------------------
+R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds: none)
+Pmin=? [F "slowest_before_fastest"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds: none)
+Pmax=? [true U<=(17 / (2 * 2)) "all_jobs_finished"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective3 (positive), 	time bounds:<=0000(17 / (2 * 2)))
+Pmax=? [true U<=(17 / (4 * 2)) "half_of_jobs_finished"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective4 (positive), 	time bounds:<=0000(17 / (4 * 2)))
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate.: 	5.9
+Reward Models:  avg_waiting_time
+Labels: 	5
+   * deadlock -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+   * half_of_jobs_finished -> 704990 state(s)
+   * slowest_before_fastest -> 1138689 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	5480480
+Transitions: 	15949890
+Choices: 	10633282
+Markovian St.: 	5316642
+Max. Rate.: 	5.9
+Reward Models:  objective4, objective3, objective1, objective2
+Labels: 	5
+   * slowest_before_fastest -> 1138689 state(s)
+   * all_jobs_finished -> 2 state(s)
+   * deadlock -> 2 state(s)
+   * half_of_jobs_finished -> 891605 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+ WARN (SparsePcaaQuery.cpp:120): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 1.87935e-21.
+
+real	120m0.106s
+user	119m48.000s
+sys	0m10.620s

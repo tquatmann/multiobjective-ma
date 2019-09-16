@@ -1,0 +1,85 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Apr 13 09:34:16 EDT 2017
+Hostname: storm-eval
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism models/mdp/dpm/dpm200.nm models/mdp/dpm/dpm200_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g
+
+Parsing model file "models/mdp/dpm/dpm200.nm"...
+
+Parsing properties file "models/mdp/dpm/dpm200_pareto.pctl"...
+
+1 property:
+(1) multi(R{"power"}min=? [ C<=200 ], R{"queue"}min=? [ C<=200 ])
+
+Type:        MDP
+Modules:     timer PM SR SP SQ 
+Variables:   c pm sr sp q 
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"power"}min=? [ C<=200 ], R{"queue"}min=? [ C<=200 ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.033 seconds.
+
+Type:        MDP
+States:      636 (1 initial)
+Transitions: 2550
+Choices:     1860
+
+Transition matrix: 772 nodes (30 terminal), 2550 minterms, vars: 11r/11c/5nd
+
+States:      636 (1 initial)
+Transitions: 2550
+Choices:     1860
+
+Transition matrix: 772 nodes (30 terminal), 2550 minterms, vars: 11r/11c/5nd
+
+Prob0A: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 0, no = 0, maybe = 636
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 202 iterations in 0.01 seconds (average 0.000040, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000059, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000059, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000059, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000059, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000040, setup 0.00)
+Iterative method: 202 iterations in 0.01 seconds (average 0.000059, setup 0.00)
+The value iteration(s) took 0.089 seconds altogether.
+Number of weight vectors used: 7
+Computed 4 points altogether:
+
+[(-55.28490700040345, -170.13410617207697), (-247.4478595142641, -158.30591076118648), (-33.97502893965237, -171.44871724779298), (-10.000000000000032, -172.94309092229724)]
+Multi-objective value iterations took 0.09 s.
+
+Value in the initial state: [(55.28490700040345,170.13410617207697),
+(247.4478595142641,158.30591076118648),
+(33.97502893965237,171.44871724779298),
+(55.28490700040345,170.13410617207697),
+(10.000000000000032,172.94309092229724),
+(33.97502893965237,171.44871724779298)]
+
+Time for model checking: 0.113 seconds.
+
+Result: [(55.28490700040345,170.13410617207697),
+(247.4478595142641,158.30591076118648),
+(33.97502893965237,171.44871724779298),
+(55.28490700040345,170.13410617207697),
+(10.000000000000032,172.94309092229724),
+(33.97502893965237,171.44871724779298)] (value in the initial state)
+
+
+real	0m1.934s
+user	0m1.172s
+sys	0m0.140s

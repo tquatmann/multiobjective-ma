@@ -1,0 +1,37 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/stream/stream.ma -const N=250 --prop models/ma/stream/singleobjective/stream1_single.csl -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.358s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate.: 	8
+Reward Models:  buffering
+Labels: 	3
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * done -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property R[exp]{"buffering"}min=? [F "done"] ...
+Result (initial states): 4.458061639
+Time for model checking: 0.625s.
+
+Performance statistics:
+  * peak memory usage: 225MB
+  * CPU time: 0.932s
+  * wallclock time: 0.987s
+
+real	0m1.002s
+user	0m0.932s
+sys	0m0.060s

@@ -1,0 +1,83 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/polling/polling.ma --prop models/ma/polling/polling3.csl -const N=4,Q=4 --multiobjective:precision 0.01 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 4.505s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	827735
+Transitions: 	2160534
+Choices: 	1689549
+Markovian St.: 	472349
+Max. Rate.: 	16
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 523520 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 523520 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.268s.
+
+
+Model checking property multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 1.512s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+Objectives:
+--------------------------------------------------------------
+000Pmin=? [true U<=2 "q1full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds:<=00002)
+000Pmin=? [true U<=2 "q2full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds:<=00002)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	827735
+Transitions: 	2146086
+Choices: 	1682325
+Markovian St.: 	465125
+Max. Rate.: 	16
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 523520 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 523520 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1486748
+Transitions: 	4345240
+Choices: 	3404628
+Markovian St.: 	725908
+Max. Rate.: 	16
+Reward Models:  objective2, objective1
+Labels: 	4
+   * q2full -> 719360 state(s)
+   * init -> 1 state(s)
+   * q1full -> 719360 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+real	120m0.032s
+user	119m57.836s
+sys	0m1.064s

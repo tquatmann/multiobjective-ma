@@ -1,0 +1,3 @@
+// Expected time until the playback starts and 
+// Probability for a buffer underrun within two time units
+multi(T[exp]min=? [F "running"], Pmin=? [true U<=2 "underrun"])

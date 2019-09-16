@@ -1,0 +1,94 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/mdp/zeroconf-tb/zeroconf-tb4_14.nm --prop models/mdp/zeroconf-tb/zeroconf-tb4_14_pareto.pctl --multiobjective:precision 0.001 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.577s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	42968
+Transitions: 	138025
+Choices: 	130735
+Reward Models:  none
+Labels: 	4
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * (time_error = 1) -> 5412 state(s)
+   * (error = 0) -> 40236 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Model checking property multi(Pmax=? [F (time_error = 1)], Pmax=? [G (error = 0)]) ...
+Preprocessing done in 2.839s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [F (time_error = 1)], Pmax=? [G (error = 0)])
+
+Objectives:
+--------------------------------------------------------------
+000Pmax=? [F (time_error = 1)] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective1 (positive), 	time bounds: none)
+00000000Pmax=? [G (error = 0)] 	(toOrigVal:001*x +001, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds: none)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	42968
+Transitions: 	138025
+Choices: 	130735
+Reward Models:  none
+Labels: 	4
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * (time_error = 1) -> 5412 state(s)
+   * (error = 0) -> 40236 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	42968
+Transitions: 	138025
+Choices: 	130735
+Reward Models:  objective2, objective1
+Labels: 	4
+   * init -> 1 state(s)
+   * deadlock -> 0 state(s)
+   * (time_error = 1) -> 5412 state(s)
+   * (error = 0) -> 40236 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 3.853s seconds (consisting of 2.839s seconds for preprocessing and 1.013s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.000307579
+   (         0,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.000307579
+   (         0,          1) * x <= 1
+
+1 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.0003075787402, 0000000001 )
+
+
+Time for model checking: 3.855s.
+
+Performance statistics:
+  * peak memory usage: 219MB
+  * CPU time: 4.300s
+  * wallclock time: 4.440s
+
+real	0m4.458s
+user	0m4.304s
+sys	0m0.116s

@@ -1,0 +1,83 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/stream/stream.ma --prop models/ma/stream/stream2.csl -const N=250 --multiobjective:precision 0.001 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.358s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate.: 	8
+Reward Models:  none
+Labels: 	4
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * underrun -> 31374 state(s)
+   * running -> 31375 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(T[exp]min=? [F "running"], Pmin=? [true U<=2 "underrun"]) ...
+Preprocessing done in 0.151s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "running"], Pmin=? [true U<=2 "underrun"])
+
+Objectives:
+--------------------------------------------------------------
+00000T[exp]min=? [F "running"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds: none)
+0Pmin=? [true U<=2 "underrun"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds:<=00002)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate.: 	8
+Reward Models:  none
+Labels: 	4
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * underrun -> 31374 state(s)
+   * running -> 31375 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	125502
+Transitions: 	249753
+Choices: 	156627
+Markovian St.: 	93877
+Max. Rate.: 	8
+Reward Models:  objective2, objective1
+Labels: 	4
+   * underrun -> 31374 state(s)
+   * running -> 62500 state(s)
+   * init -> 1 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+real	120m0.005s
+user	119m57.648s
+sys	0m1.064s

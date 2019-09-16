@@ -1,0 +1,4 @@
+// Expected time until all jobs are finished and
+// Expected time until at least half of the jobs are finished and
+// Expected average waiting time of a job
+ multi(Tmin=? [ F "all_jobs_finished"], Tmin=? [ F "half_of_jobs_finished"], R{"avg_waiting_time"}min=? [ F "all_jobs_finished"])

@@ -1,0 +1,3 @@
+// Expected time until all jobs are finished and
+// Probability that half of the jobs are finished within N/(4K) time units
+ multi(Tmin=? [ F "all_jobs_finished"], Pmax=? [ F<=(N/(4*K)) "half_of_jobs_finished"])

@@ -1,0 +1,87 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/jobs/jobs10_2.ma --prop models/ma/jobs/singleobjective/jobs1.csl -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.505s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  none
+Labels: 	3
+   * deadlock -> 1 state(s)
+   * init -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(T[exp]min=? [F "all_jobs_finished"]) ...
+Preprocessing done in 0.056s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"])
+
+Objectives:
+--------------------------------------------------------------
+T[exp]min=? [F "all_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds: none)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  none
+Labels: 	3
+   * deadlock -> 1 state(s)
+   * init -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  objective1
+Labels: 	3
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 0.125s seconds (consisting of 0.056s seconds for preprocessing and 0.060s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 3.052025694
+Time for model checking: 0.125s.
+
+Performance statistics:
+  * peak memory usage: 215MB
+  * CPU time: 0.572s
+  * wallclock time: 0.664s
+
+real	0m0.697s
+user	0m0.576s
+sys	0m0.108s

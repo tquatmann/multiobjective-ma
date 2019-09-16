@@ -1,0 +1,89 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Apr 13 09:51:00 EDT 2017
+Hostname: storm-eval
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism models/mdp/team/team2obj_5.nm models/mdp/team/team2obj_5_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs
+
+Parsing model file "models/mdp/team/team2obj_5.nm"...
+
+Parsing properties file "models/mdp/team/team2obj_5_pareto.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F "task1_compl" ], R{"w_1_total"}max=? [ C ])
+
+Type:        MDP
+Modules:     controller sensor1 sensor2 sensor3 sensor4 sensor5 
+Variables:   status t1_r1 t1_r2 t1_r3 t2_r1 t2_r2 t2_r3 turn1 turn2 turn3 turn4 turn5 state1 m1_t1 m1_t2 state2 m2_t1 m2_t2 state3 m3_t1 m3_t2 state4 m4_t1 m4_t2 state5 m5_t1 m5_t2 
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F "task1_compl" ], R{"w_1_total"}max=? [ C ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 19 iterations in 1.84 seconds (average 0.097053, setup 0.00)
+
+Time for model construction: 7.147 seconds.
+
+Type:        MDP
+States:      907993 (1 initial)
+Transitions: 1084752
+Choices:     1078873
+
+Transition matrix: 361071 nodes (4 terminal), 1084752 minterms, vars: 40r/40c/16nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking deterministic Rabin automaton from library...
+DRA has 2 states, , 1 Rabin pairs.Time for Rabin translation: 0.02 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 19 iterations in 2.18 seconds (average 0.114526, setup 0.00)
+States:      907993 (1 initial)
+Transitions: 1084752
+Choices:     1078873
+
+Transition matrix: 388712 nodes (4 terminal), 1084752 minterms, vars: 41r/41c/16nd
+
+States:      907993 (1 initial)
+Transitions: 1084752
+Choices:     1078873
+
+Transition matrix: 388712 nodes (4 terminal), 1084752 minterms, vars: 41r/41c/16nd
+
+Finding accepting end components for F "task1_compl"...
+Time for end component identification: 2.331 seconds.
+
+Prob0A: 15 iterations in 1.98 seconds (average 0.132267, setup 0.00)
+
+yes = 52200, no = 0, maybe = 855793
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 20 iterations in 0.68 seconds (average 0.033800, setup 0.00)
+Iterative method: 20 iterations in 0.75 seconds (average 0.037400, setup 0.00)
+Iterative method: 20 iterations in 0.62 seconds (average 0.030600, setup 0.01)
+The value iteration(s) took 4.416 seconds altogether.
+Number of weight vectors used: 2
+Computed 1 points altogether:
+
+[(0.999999999999999, 2.775510204081631)]
+Multi-objective value iterations took 4.417 s.
+
+Value in the initial state: [(0.999999999999999,2.775510204081631),
+(0.999999999999999,2.775510204081631)]
+
+Time for model checking: 8571.696 seconds.
+
+Result: [(0.999999999999999,2.775510204081631),
+(0.999999999999999,2.775510204081631)] (value in the initial state)
+
+
+real	143m1.214s
+user	143m3.220s
+sys	0m4.212s

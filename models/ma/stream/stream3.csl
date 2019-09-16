@@ -1,0 +1,3 @@
+// Probability that the playback starts within 0.5 time units
+// Probability for a buffer underrun within two time units
+multi(Pmax=? [F<=0.5 "running"], Pmin=? [true U<=2 "underrun"])

@@ -1,0 +1,87 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/mutex/mutex.ma --prop models/ma/mutex/mutex2.csl -const N=3 --multiobjective:precision 0.001 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.440s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	38453
+Transitions: 	111687
+Choices: 	99132
+Markovian St.: 	8487
+Max. Rate.: 	3
+Reward Models:  none
+Labels: 	5
+   * deadlock -> 0 state(s)
+   * crit1 -> 2829 state(s)
+   * crit2 -> 2829 state(s)
+   * crit3 -> 2829 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.013s.
+
+
+Model checking property multi(Pmax=? [true U<=1 "crit1"], Pmax=? [true U<=1 "crit2"], Pmax=? [true U<=1 "crit3"]) ...
+Preprocessing done in 0.086s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [true U<=1 "crit1"], Pmax=? [true U<=1 "crit2"], Pmax=? [true U<=1 "crit3"])
+
+Objectives:
+--------------------------------------------------------------
+0000Pmax=? [true U<=1 "crit1"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective1 (positive), 	time bounds:<=00001)
+0000Pmax=? [true U<=1 "crit2"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective2 (positive), 	time bounds:<=00001)
+0000Pmax=? [true U<=1 "crit3"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective3 (positive), 	time bounds:<=00001)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	38453
+Transitions: 	103929
+Choices: 	91374
+Markovian St.: 	729
+Max. Rate.: 	3
+Reward Models:  none
+Labels: 	5
+   * deadlock -> 0 state(s)
+   * crit1 -> 2829 state(s)
+   * crit2 -> 2829 state(s)
+   * crit3 -> 2829 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	68507
+Transitions: 	169374
+Choices: 	150861
+Markovian St.: 	1620
+Max. Rate.: 	3
+Reward Models:  objective3, objective1, objective2
+Labels: 	5
+   * init -> 1 state(s)
+   * crit1 -> 4530 state(s)
+   * crit2 -> 4530 state(s)
+   * crit3 -> 4530 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+real	120m0.007s
+user	119m5.056s
+sys	0m53.856s

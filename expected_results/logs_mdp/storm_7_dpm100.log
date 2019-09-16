@@ -1,0 +1,105 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/mdp/dpm/dpm100.nm --prop models/mdp/dpm/dpm100_pareto.pctl --multiobjective:precision 0.001 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.128s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  queue, power
+Labels: 	2
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Model checking property multi(R[exp]{"power"}min=? [C<=100], R[exp]{"queue"}min=? [C<=100]) ...
+Preprocessing done in 0.000s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"power"}min=? [C<=100], R[exp]{"queue"}min=? [C<=100])
+
+Objectives:
+--------------------------------------------------------------
+0R[exp]{"power"}min=? [C<=100] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds:<=00100)
+0R[exp]{"queue"}min=? [C<=100] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds:<=00100)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  queue, power
+Labels: 	2
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  objective2, objective1
+Labels: 	2
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 0.131s seconds (consisting of 0.000s seconds for preprocessing and 0.130s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   ( -0.027306,         -1) * x <= -73.304
+   (-0.0270904,         -1) * x <= -73.2945
+   (-0.0279882,         -1) * x <= -73.3287
+   (-0.0286697,         -1) * x <= -73.3472
+   (        -1,          0) * x <= -5
+   (-0.0293504,         -1) * x <= -73.3586
+   (         0,         -1) * x <= -69.9753
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (        -1,          0) * x <= -5
+   (         0,         -1) * x <= -69.9753
+   (-0.0267838,  -0.973216) * x <= -71.3482
+   (-0.0279256,  -0.972074) * x <= -71.2998
+   (-0.0263719,  -0.973628) * x <= -71.3611
+   (-0.0285135,  -0.971486) * x <= -71.2668
+   (-0.0275693,  -0.972431) * x <= -71.3166
+   (-0.0263947,  -0.973605) * x <= -71.3608
+   (-0.0272262,  -0.972774) * x <= -71.3322
+
+6 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0000000005, 73.21179949 )
+   (16.74272123, 72.86714592 )
+   (44.11485403, 72.09945064 )
+   (36.14281996, 72.31713471 )
+   (122.5231459, 69.97534067 )
+   (27.06799873, 72.57112302 )
+
+
+Time for model checking: 0.131s.
+
+Performance statistics:
+  * peak memory usage: 214MB
+  * CPU time: 0.184s
+  * wallclock time: 0.287s
+
+real	0m0.305s
+user	0m0.184s
+sys	0m0.096s

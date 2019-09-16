@@ -1,0 +1,65 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Apr 13 08:52:00 EDT 2017
+Hostname: storm-eval
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism models/mdp/scheduler/scheduler05.nm models/mdp/scheduler/scheduler05_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g
+
+Parsing model file "models/mdp/scheduler/scheduler05.nm"...
+
+Parsing properties file "models/mdp/scheduler/scheduler05_pareto.pctl"...
+
+1 property:
+(1) multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+Type:        MDP
+Modules:     scheduler P1 P2 
+Variables:   task1 task2 task3 task4 task5 task6 p1 c1 x1 p2 c2 x2 
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 99 iterations in 0.58 seconds (average 0.005859, setup 0.00)
+
+Time for model construction: 0.69 seconds.
+
+Type:        MDP
+States:      31965 (1 initial)
+Transitions: 60434
+Choices:     57965
+
+Transition matrix: 7870 nodes (5 terminal), 60434 minterms, vars: 30r/30c/10nd
+
+States:      31965 (1 initial)
+Transitions: 60434
+Choices:     57965
+
+Transition matrix: 7870 nodes (5 terminal), 60434 minterms, vars: 30r/30c/10nd
+
+Prob0A: 1 iterations in 0.00 seconds (average 0.004000, setup 0.00)
+
+yes = 0, no = 0, maybe = 31965
+
+Computing remaining probabilities...
+Engine: Sparse
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f863f0f78a6, pid=14255, tid=0x00007f863d8a1700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_121-b13) (build 1.8.0_121-8u121-b13-4-b13)
+# Java VM: OpenJDK 64-Bit Server VM (25.121-b13 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libc.so.6+0x778a6]# [ timer expired, abort... ]
+/home/storm/prism-4.3.1-linux64/bin/prism: line 79: 14255 Aborted                 "$PRISM_JAVA" $PRISM_JAVA_DEBUG $PRISM_JAVAMAXMEM $PRISM_JAVASTACKSIZE -Djava.awt.headless=$PRISM_HEADLESS -Djava.library.path="$JAVA_LIBRARY_PATH" -classpath "$PRISM_CLASSPATH" $PRISM_MAINCLASS "$@"
+
+real	2m2.633s
+user	0m3.072s
+sys	0m0.200s

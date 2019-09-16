@@ -1,0 +1,2 @@
+// Probability that queue 1 gets full within two time units
+multi(Pmin=? [F<=2 "q1full"])

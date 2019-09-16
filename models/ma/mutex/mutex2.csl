@@ -1,0 +1,2 @@
+// Probability that process i enters its critical section within one time unit for each i in {1,2,3}
+multi(Pmax=? [F<=1 "crit1"], Pmax=? [F<=1 "crit2"], Pmax=? [F<=1 "crit3"])

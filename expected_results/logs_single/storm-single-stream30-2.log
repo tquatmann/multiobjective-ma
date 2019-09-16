@@ -1,0 +1,37 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/stream/stream.ma -const N=30 --prop models/ma/stream/singleobjective/stream2_single.csl --precision 0.01 -tm -stats 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.078s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate.: 	8
+Reward Models:  none
+Labels: 	3
+   * deadlock -> 0 state(s)
+   * init -> 1 state(s)
+   * underrun -> 464 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property Pmin=? [true U<=2 "underrun"] ...
+Result (initial states): 0.01893209983
+Time for model checking: 0.295s.
+
+Performance statistics:
+  * peak memory usage: 214MB
+  * CPU time: 0.348s
+  * wallclock time: 0.377s
+
+real	0m0.392s
+user	0m0.348s
+sys	0m0.040s

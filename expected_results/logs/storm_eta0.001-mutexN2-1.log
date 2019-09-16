@@ -1,0 +1,158 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/mutex/mutex.ma --prop models/ma/mutex/mutex1.csl -const N=2 --multiobjective:precision 0.001 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.201s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	13476
+Transitions: 	38592
+Choices: 	34224
+Markovian St.: 	2688
+Max. Rate.: 	2
+Reward Models:  none
+Labels: 	5
+   * deadlock -> 0 state(s)
+   * crit1 -> 896 state(s)
+   * crit2 -> 896 state(s)
+   * crit3 -> 896 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.004s.
+
+
+Model checking property multi(Pmax=? [true U<=1/2 "crit1"], Pmax=? [true U<=1/2 "crit2"], Pmax=? [true U<=1/2 "crit3"]) ...
+Preprocessing done in 0.027s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [true U<=1/2 "crit1"], Pmax=? [true U<=1/2 "crit2"], Pmax=? [true U<=1/2 "crit3"])
+
+Objectives:
+--------------------------------------------------------------
+00Pmax=? [true U<=1/2 "crit1"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective1 (positive), 	time bounds:<=1/20000)
+00Pmax=? [true U<=1/2 "crit2"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective2 (positive), 	time bounds:<=1/20000)
+00Pmax=? [true U<=1/2 "crit3"] 	(toOrigVal:001*x +000, 	intern threshold:   none, 	intern reward model: objective3 (positive), 	time bounds:<=1/20000)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	13476
+Transitions: 	36120
+Choices: 	31752
+Markovian St.: 	216
+Max. Rate.: 	2
+Reward Models:  none
+Labels: 	5
+   * deadlock -> 0 state(s)
+   * crit1 -> 896 state(s)
+   * crit2 -> 896 state(s)
+   * crit3 -> 896 state(s)
+   * init -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	23328
+Transitions: 	56520
+Choices: 	50208
+Markovian St.: 	480
+Max. Rate.: 	2
+Reward Models:  objective3, objective1, objective2
+Labels: 	5
+   * init -> 1 state(s)
+   * crit1 -> 1464 state(s)
+   * crit2 -> 1464 state(s)
+   * crit3 -> 1464 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 1333.436s seconds (consisting of 0.027s seconds for preprocessing and 1333.409s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 17 Halfspaces:
+   (         1,   0.999996,   0.999998) * x <= 1.89625
+   (         1,          0,          1) * x <= 1.63212
+   (         0,          1,          1) * x <= 1.63212
+   (         1,          1,   0.999999) * x <= 1.89625
+   (         0,          1,          0) * x <= 1
+   (         1,          0,          0) * x <= 1
+   (         1,   0.666733,   0.999996) * x <= 1.79289
+   (         0,          0,          1) * x <= 1
+   (         1,          1,          0) * x <= 1.63212
+   (  0.666736,   0.999995,          1) * x <= 1.79289
+   (         1,          1,   0.666712) * x <= 1.79289
+   (  0.666629,          1,   0.999987) * x <= 1.79285
+   (         1,   0.999849,   0.999994) * x <= 1.8962
+   (         1,   0.999996,    0.66669) * x <= 1.79288
+   (         1,   0.999999,          1) * x <= 1.89625
+   (  0.999983,   0.999993,          1) * x <= 1.89624
+   (  0.999984,   0.666616,          1) * x <= 1.79285
+
+Overapproximation of achievable values: Polytope with 26 Halfspaces:
+   (         1,          0,          0) * x <= 1.00052
+   (         0,          1,          0) * x <= 1.00052
+   (         0,          0,          1) * x <= 1.00052
+   (  0.326918,   0.343837,   0.329245) * x <= 0.638501
+   (  0.536921,          0,   0.463079) * x <= 0.830011
+   (  0.555568,   0.444432,          0) * x <= 0.836872
+   (         0,   0.324266,   0.675734) * x <= 0.881099
+   (    0.3153,   0.163158,   0.521543) * x <= 0.760519
+   (  0.354497,   0.590166,  0.0553369) * x <= 0.827952
+   (         0,    0.52942,    0.47058) * x <= 0.827251
+   (  0.434614,   0.272543,   0.292844) * x <= 0.691085
+   (  0.240972,   0.334032,   0.424996) * x <= 0.695819
+   (   0.43436,   0.342979,   0.222661) * x <= 0.705165
+   (       0.5,        0.5,          0) * x <= 0.816427
+   ( 0.0936767,   0.448021,   0.458302) * x <= 0.764429
+   (  0.481316,  0.0778777,   0.440806) * x <= 0.779078
+   (       0.5,          0,        0.5) * x <= 0.816427
+   (   0.33582,   0.313431,    0.35075) * x <= 0.645085
+   (         0,        0.5,        0.5) * x <= 0.816427
+   (  0.340908,   0.340907,   0.318185) * x <= 0.6397
+   (  0.143426,   0.440827,   0.415747) * x <= 0.738537
+   (  0.333333,   0.333333,   0.333333) * x <= 0.632383
+   (  0.335821,    0.35076,   0.313419) * x <= 0.645092
+   (  0.375011,   0.249981,   0.375008) * x <= 0.672645
+   (  0.249987,   0.375005,   0.375008) * x <= 0.672642
+   (  0.375016,   0.375029,   0.249955) * x <= 0.672662
+
+13 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.3101266149, 0.5861212553, 0000000001 )
+   (0000000001, 0.6321198903, 0.2411342475 )
+   (0000000001, 0.3216285792, 0.574621311 )
+   (0000000001, 0.2411361996, 0.6321199017 )
+   (0000000001, 0.5861216005, 0.310128976 )
+   (0000000001, 0.3101269202, 0.5861212992 )
+   (0.6321198517, 0.2411274224, 0000000001 )
+   (0.586121592, 0000000001, 0.3101289189 )
+   (0.5861215921, 0.310128937, 0000000001 )
+   (0.2411288823, 0000000001, 0.6321198609 )
+   (0.2411361994, 0.6321199017, 0000000001 )
+   (0.6321199017, 0000000001, 0.2411361995 )
+   (0.3101292102, 0000000001, 0.5861216342 )
+
+
+Time for model checking: 1333.437s.
+
+Performance statistics:
+  * peak memory usage: 215MB
+  * CPU time: 1332.820s
+  * wallclock time: 1333.649s
+
+real	22m13.665s
+user	22m12.820s
+sys	0m0.472s

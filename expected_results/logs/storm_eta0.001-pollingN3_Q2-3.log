@@ -1,0 +1,122 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/polling/polling.ma --prop models/ma/polling/polling3.csl -const N=3,Q=2 --multiobjective:precision 0.001 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.080s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1020
+Transitions: 	2507
+Choices: 	1867
+Markovian St.: 	523
+Max. Rate.: 	14
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 576 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 576 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 0.001s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+Objectives:
+--------------------------------------------------------------
+000Pmin=? [true U<=2 "q1full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds:<=00002)
+000Pmin=? [true U<=2 "q2full"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds:<=00002)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1020
+Transitions: 	2477
+Choices: 	1852
+Markovian St.: 	508
+Max. Rate.: 	14
+Reward Models:  none
+Labels: 	4
+   * init -> 1 state(s)
+   * q2full -> 576 state(s)
+   * deadlock -> 0 state(s)
+   * q1full -> 576 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1980
+Transitions: 	5183
+Choices: 	3853
+Markovian St.: 	871
+Max. Rate.: 	14
+Reward Models:  objective2, objective1
+Labels: 	4
+   * q2full -> 828 state(s)
+   * init -> 1 state(s)
+   * q1full -> 828 state(s)
+   * deadlock -> 0 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 1435.398s seconds (consisting of 0.001s seconds for preprocessing and 1435.397s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 8 Halfspaces:
+   ( -0.218444,         -1) * x <= -1.08679
+   ( -0.487591,         -1) * x <= -1.2856
+   ( -0.322036,         -1) * x <= -1.16395
+   ( -0.655647,         -1) * x <= -1.40772
+   (         0,         -1) * x <= -0.923618
+   (        -1,  -0.964695) * x <= -1.62356
+   (        -1,          0) * x <= -0.720054
+   (  -0.38814,         -1) * x <= -1.21277
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (        -1,          0) * x <= -0.719581
+   (         0,         -1) * x <= -0.922999
+   ( -0.261717,  -0.738283) * x <= -0.876522
+   ( -0.657466,  -0.342534) * x <= -0.793746
+   ( -0.361017,  -0.638983) * x <= -0.856946
+   (-0.0271108,  -0.972889) * x <= -0.91821
+   ( -0.443821,  -0.556179) * x <= -0.839692
+   ( -0.303015,  -0.696985) * x <= -0.868589
+   ( -0.228091,  -0.771909) * x <= -0.882686
+
+7 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (0.7200539945, 0.936568599 )
+   (0.7225387097, 0.9339929501 )
+   (0.7386012549, 0.9260896294 )
+   (0.7469650848, 0.9236182049 )
+   (0.7448217564, 0.9240864032 )
+   (0.7267040837, 0.9312619353 )
+   (0.7322800828, 0.9285431264 )
+
+
+Time for model checking: 1435.399s.
+
+Performance statistics:
+  * peak memory usage: 214MB
+  * CPU time: 1434.564s
+  * wallclock time: 1435.484s
+
+real	23m55.499s
+user	23m54.568s
+sys	0m0.656s

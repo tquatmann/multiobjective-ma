@@ -1,0 +1,5 @@
+// Expected average waiting time of a job and
+// Probability that the slowest job is executed before the fastest one and
+// Probability that all jobs are finished within N/(2K) time units and
+// Probability that half of the jobs are finished within N/(4K) time units
+ multi(R{"avg_waiting_time"}min=? [ F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"], Pmax=? [ F<=(N/(2*K)) "all_jobs_finished"], Pmax=? [ F<=(N/(4*K)) "half_of_jobs_finished"])

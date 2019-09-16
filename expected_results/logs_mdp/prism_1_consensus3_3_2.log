@@ -1,0 +1,105 @@
+PRISM
+=====
+
+Version: 4.3.1
+Date: Thu Apr 13 02:58:40 EDT 2017
+Hostname: storm-eval
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism models/mdp/consensus/consensus3_3_2.nm models/mdp/consensus/consensus3_3_2_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g
+
+Parsing model file "models/mdp/consensus/consensus3_3_2.nm"...
+
+Parsing properties file "models/mdp/consensus/consensus3_3_2_pareto.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F "one_proc_err" ], Pmax=? [ G "one_coin_ok" ])
+
+Type:        MDP
+Modules:     process1 process2 process3 coin1_error 
+Variables:   s1 r1 p1 s2 r2 p2 s3 r3 p3 c1 v1 
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F "one_proc_err" ], Pmax=? [ G "one_coin_ok" ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 30 iterations in 0.16 seconds (average 0.005200, setup 0.00)
+
+Time for model construction: 0.315 seconds.
+
+Type:        MDP
+States:      17455 (1 initial)
+Transitions: 46702
+Choices:     46702
+
+Transition matrix: 12325 nodes (2 terminal), 46702 minterms, vars: 24r/24c/22nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking deterministic Rabin automaton from library...
+DRA has 2 states, , 1 Rabin pairs.Time for Rabin translation: 0.023 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 30 iterations in 0.16 seconds (average 0.005467, setup 0.00)
+States:      17455 (1 initial)
+Transitions: 46702
+Choices:     46702
+
+Transition matrix: 14942 nodes (2 terminal), 46702 minterms, vars: 25r/25c/22nd
+
+Building deterministic Rabin automaton (for G "L0")...
+Taking deterministic Rabin automaton from library...
+DRA has 2 states, , 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 30 iterations in 0.15 seconds (average 0.004933, setup 0.00)
+States:      17455 (1 initial)
+Transitions: 46702
+Choices:     46702
+
+Transition matrix: 16175 nodes (2 terminal), 46702 minterms, vars: 26r/26c/22nd
+
+States:      17455 (1 initial)
+Transitions: 46702
+Choices:     46702
+
+Transition matrix: 16175 nodes (2 terminal), 46702 minterms, vars: 26r/26c/22nd
+
+Finding accepting end components for F "one_proc_err"...
+Time for end component identification: 0.001 seconds.
+
+Finding accepting end components for G "one_coin_ok"...
+Time for end component identification: 0.0 seconds.
+
+Prob0A: 16 iterations in 0.16 seconds (average 0.010250, setup 0.00)
+
+yes = 156, no = 2868, maybe = 14431
+
+Computing remaining probabilities...
+Engine: Sparse
+Iterative method: 23 iterations in 0.03 seconds (average 0.001217, setup 0.00)
+Iterative method: 14 iterations in 0.02 seconds (average 0.001143, setup 0.00)
+Iterative method: 18 iterations in 0.03 seconds (average 0.001556, setup 0.00)
+The value iteration(s) took 0.161 seconds altogether.
+Number of weight vectors used: 1
+Computed 2 points altogether:
+
+[(1.0, 0.0), (0.0, 1.0)]
+Multi-objective value iterations took 0.161 s.
+
+Value in the initial state: [(1.0,0.0),
+(0.0,1.0)]
+
+Time for model checking: 1.284 seconds.
+
+Result: [(1.0,0.0),
+(0.0,1.0)] (value in the initial state)
+
+
+real	0m2.781s
+user	0m2.728s
+sys	0m0.196s

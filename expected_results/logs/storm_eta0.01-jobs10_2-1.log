@@ -1,0 +1,139 @@
+Storm 1.0.0
+
+Command line arguments: --prism models/ma/jobs/jobs10_2.ma --prop models/ma/jobs/jobs1.csl --multiobjective:precision 0.01 -stats -tm 
+Current working directory: /home/storm/Desktop
+
+Time for model construction: 0.325s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  avg_waiting_time
+Labels: 	4
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * half_of_jobs_finished -> 2772 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+
+Model checking property multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"]) ...
+Preprocessing done in 0.052s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"])
+
+Objectives:
+--------------------------------------------------------------
+T[exp]min=? [F "all_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective1 (negative), 	time bounds: none)
+T[exp]min=? [F "half_of_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective2 (negative), 	time bounds: none)
+R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"] 	(toOrigVal:0-1*x +000, 	intern threshold:   none, 	intern reward model: objective3 (negative), 	time bounds: none)
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  avg_waiting_time
+Labels: 	4
+   * init -> 1 state(s)
+   * deadlock -> 1 state(s)
+   * half_of_jobs_finished -> 2772 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate.: 	5.7
+Reward Models:  objective3, objective1, objective2
+Labels: 	4
+   * init -> 1 state(s)
+   * half_of_jobs_finished -> 2772 state(s)
+   * deadlock -> 1 state(s)
+   * all_jobs_finished -> 1 state(s)
+choice labels: 	no
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Solving multi-objective query took 0.552s seconds (consisting of 0.052s seconds for preprocessing and 0.497s seconds for value iteration-based exploration of achievable points).
+Result (initial states): 
+Underapproximation of achievable values: Polytope with 20 Halfspaces:
+   (        -1,          0,  -0.588022) * x <= -4.01434
+   (        -1,   -0.12146, -0.0732368) * x <= -3.39481
+   ( -0.215309,         -1,          0) * x <= -1.739
+   (        -1,  -0.139531, -0.0887202) * x <= -3.44683
+   (-6.6899e-15,         -1, -4.9277e-15) * x <= -1.04911
+   (        -1,          0,  -0.367993) * x <= -3.68336
+   (-5.44745e-15,         -1,          0) * x <= -1.04911
+   (         0,         -1,          0) * x <= -1.04911
+   (        -1,          0,          0) * x <= -3.05203
+   (        -1,          0,   -0.90449) * x <= -4.46743
+   ( -0.280061,          0,         -1) * x <= -2.28217
+   (        -1,          0,  -0.148001) * x <= -3.32123
+   (        -1,  -0.135992, -0.0126499) * x <= -3.31617
+   (        -1,   -0.13746, -0.0908551) * x <= -3.44732
+   (  -0.66581,          0,         -1) * x <= -3.53002
+   (        -1,  -0.186732,          0) * x <= -3.36965
+   (        -1,  -0.142955,          0) * x <= -3.30551
+   (-2.32374e-14,         -1, -4.57524e-14) * x <= -1.04911
+   (         0,          0,         -1) * x <= -1.3583
+   (        -1,          0,   -0.25222) * x <= -3.49771
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (        -1,          0,          0) * x <= -3.05203
+   (         0,         -1,          0) * x <= -1.04911
+   (         0,          0,         -1) * x <= -1.3583
+   ( -0.756025,  -0.243975,          0) * x <= -2.65609
+   ( -0.762754,          0,  -0.237246) * x <= -2.73984
+   ( -0.367471,          0,  -0.632529) * x <= -2.05922
+   ( -0.853062,  -0.146938,          0) * x <= -2.85642
+   ( -0.684512,          0,  -0.315488) * x <= -2.61696
+   ( -0.839322,          0,  -0.160678) * x <= -2.84932
+   ( -0.470631,          0,  -0.529369) * x <= -2.24733
+
+10 pareto optimal points found (Note that these points are safe, i.e., contained in the underapproximation, but there is no guarantee for optimality):
+   (3.052025694, 1.77315689, 1.818947201 )
+   (3.298795433, 1.049111451, 1.358303191 )
+   (3.20415839, 1.049111451, 1.396662487 )
+   (3.28568073, 1.049111451, 1.376107856 )
+   (3.070615668, 1.64814162, 1.693339987 )
+   (3.172478169, 1.055932489, 1.431687989 )
+   (3.234891211, 1.049111451, 1.376200269 )
+   (3.096033683, 1.465312391, 1.649487272 )
+   (3.129802362, 1.315637196, 1.504263151 )
+   (3.093255787, 1.515866228, 1.603576479 )
+
+
+Time for model checking: 0.552s.
+
+Performance statistics:
+  * peak memory usage: 216MB
+  * CPU time: 0.796s
+  * wallclock time: 0.903s
+
+real	0m0.925s
+user	0m0.800s
+sys	0m0.092s
