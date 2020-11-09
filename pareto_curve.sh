@@ -1,11 +1,14 @@
 #!/bin/bash
 
-# set up the directory for plot results
-mkdir -p plot
-rm -f plot/*.csv
+source settings.sh
+
+LOGS_DIR=$LOGS_ROOT/plot
+mkdir -p $LOGS_DIR
+
+rm -f $LOGS_DIR/*.csv
 
 # create a python script for plotting the result
-cat >plot/plot.py <<EOL
+cat >$LOGS_DIR/plot.py <<EOL
 import numpy as np
 from numpy import genfromtxt
 overapprox = genfromtxt('overapproximation.csv', delimiter=',', skip_header=1)
@@ -21,8 +24,8 @@ plt.show()
 EOL
 
 #invoke storm and the python script
-~/storm/build/bin/storm --prism models/ma/jobs/jobs12_3.ma --prop models/ma/jobs/jobs2.csl --multiobjective:precision 0.01 -stats -tm --multiobjective:exportplot plot/
-cd plot
+$STORM_EXECUTABLE --prism $BENCHMARK_DIR/ma/jobs/jobs12_3.ma --prop $BENCHMARK_DIR/ma/jobs/jobs2.csl --multiobjective:precision 0.01 -stats -tm --multiobjective:exportplot $LOGS_DIR/
+cd $LOGS_DIR
 python3 plot.py &
 cd ..
 
