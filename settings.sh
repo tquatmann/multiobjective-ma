@@ -7,7 +7,7 @@ PRISM_JAVASTACKSIZE="-4g"
 
 # Paths to Storm, Prism, IMCA
 STORM_EXECUTABLE=$HOME/storm/build/bin/storm
-PRISM_EXECUTABLE=$HOME/prism/bin/prism
+PRISM_EXECUTABLE=$HOME/prism/prism/bin/prism
 IMCA_EXECUTABLE=$HOME/imca/bin/imca
 
 # Paths to model data, log file destination
