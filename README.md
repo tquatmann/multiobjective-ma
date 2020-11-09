@@ -6,12 +6,15 @@ This repository contains benchmark files for multi-objective model checking of M
 ## Multi-objective model checking with Storm
 
 We have integrated multi-objective model checking of Markov Automata (MAs) and Markov Decision Processes (MDPs) into the model checker Storm. 
-Please visit www.stormchecker.org to obtain a recent versio of Storm.
+Please visit http://www.stormchecker.org to obtain a recent version of Storm. For our experiments we considered the version with git commit `d0c153da8df7d2aed3e348f2c70fc7b74c26f220`.
+
 When storm has been installed, it can be invoked via
+
 ```
 path/to/storm/build/bin/storm (OPTIONS)
 ```
 where `(OPTIONS)` is a list of options. For example,
+
 ```
 cd models/ma/jobs/
 path/to/storm/build/bin/ --prism jobs10_2.ma --prop jobs1.csl --multiobjective:precision 0.01
@@ -40,19 +43,17 @@ Below, we list the most relevant options for multi-objective model checking wit 
 * `--multiobjective:maxsteps (i)` limits the number of performed refinement steps to (i)
 * `--multiobjective:exportplot (DIRECTORY)`  Saves various data for plotting the approximation of the Pareto curve.  Only works if exactly two objectives are considered. The data is stored into files located at (DIRECTORY)*.csv
 
-More information can be found on the website of Storm:
-* http://www.stormchecker.org/documentation/usage/running-storm.html
-* http://www.stormchecker.org/documentation/usage/properties.html
+More information can be found on the [website of Storm](http://www.stormchecker.org).
 
 
 ## Benchmarking scripts
 
 We provide a few scripts that can help with the execution of the benchmarks.
-Note that a user might need to adapt the paths in these scripts to make them work on his or her machine.
+Before running the scriupts, it might be necessary to adapt the file `settings.sh` to set, e.g., the path to the storm binary.
 
-* `./pareto_curve.sh`  invokes Storm in a way that it exports the resulting over- and under-approximation in .csv files located at `~/Desktop/plot/`. Afterwards, a simple python script is invoked to display the result.
-* `./multi_obj_ma.sh`  calls Storm for different MA case studies and objectives and stores the output into different log files located at `~/Desktop/logs/`.
-* `./multi_obj_ma_subset.sh` only considers a small subset of the MA benchmarks.
-* `./multi_obj_mdp.sh` calls Storm and PRISM for the different case studies. The resulting log files are stored in `~/Desktop/logs_mdp/`. For PRISM, we consider standard value iteration (see log files "prism_*.log") and Gauss-Seidel value iteration (see log files "prism-gs_*.log").
-* `./single_obj_ma.sh` calls Storm and IMCA for the different case studies. The resulting log files are stored in `~/Desktop/logs_single/`. We consider IMCA with and without enabling expected-time value iteration (see log files "imca-val*.log" and "imca-*.log", respectively)
+* `./pareto_curve.sh`  invokes Storm in a way that it exports the resulting over- and under-approximation in .csv files. Afterwards, a simple python script is invoked to display the result.
+* `./multi_obj_ma.sh`  calls Storm for different MA case studies and objectives and stores the output into different log files.
+* `multi_obj_ma_subset.sh` only considers a small subset of the MA benchmarks.
+* `./multi_obj_mdp.sh` calls Storm and PRISM for the different case studies. For PRISM, we consider standard value iteration (see log files `prism_*.log`) and Gauss-Seidel value iteration (see log files `Prism-gs_*.log`).
+* `./single_obj_ma.sh` calls Storm and IMCA for the different case studies. We consider IMCA with and without enabling expected-time value iteration (see log files `imca-val*.log` and `imca-*.log`, respectively)
 
