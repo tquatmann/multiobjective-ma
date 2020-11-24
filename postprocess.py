@@ -581,6 +581,8 @@ def filter_fastest(data, tool):
 if __name__ == "__main__":
     print("This script can be used to create latex tables and .csv files once enough experiments have been run.")
     print("Saving output to '{}'.".format(outputdir))
+    if not os.path.exists(outputdir):
+        os.makedirs(outputdir)
     if len(sys.argv) < 2:
         print("Usage: \n\t{0} <logdir>.".format(sys.argv[0]));
         exit(1)
@@ -605,4 +607,139 @@ if __name__ == "__main__":
     for entry in entries_to_delete: del(data[entry])        
     create_csv(data.values(), os.path.join(outputdir, "singleObjScatterPlot.csv"), "imca")
     print("Produced single-ma results.")
+    print("Run the following command to create the file results.pdf containing tables and plots.\n\tcd {}; pdflatex results.tex".format(outputdir))
+    
+    with open(os.path.join(outputdir, "results.tex"), 'w') as outputfile:
+        outputfile.write(r"""\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\usepackage{paralist}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{tikz} 
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{array}
+
+\usetikzlibrary{arrows,decorations.pathmorphing,positioning,fit,trees,shapes,shadows,automata,calc,patterns} 
+
+
+\newcommand{\storm}{\texttt{Storm}}
+\newcommand{\prism}{\texttt{PRISM}}
+\newcommand{\imca}{\texttt{IMCA}}
+
+\begin{document}
+\title{Results of Experiments}
+\maketitle
+
+\begin{tikzpicture}
+\begin{axis}[
+width=4.4cm,
+height=4.4cm,
+xmin=0.005,
+ymin=0.005,
+ymax=200,
+xmax=200,
+xmode=log,
+ymode=log,
+axis x line=bottom,
+axis y line=left,
+x label style={at={(axis description cs:0.5,0.01)},anchor=north},
+y label style={at={(axis description cs:0.11,.5)},anchor=south},
+ytick={0.001, 0.1, 1, 10, 100}, 
+yticklabels={0.001, 0.1, 1, 10, 100}, 
+xtick={0.001, 0.1, 1, 10, 100},
+xticklabels={0.001, 0.1, 1, 10, 100},
+xlabel=\storm,
+ylabel=\prism,
+yticklabel style={font=\tiny},
+xticklabel style={rotate=290, anchor=west, font=\tiny},
+legend style={font=\tiny,at={(axis cs:10,0.01)},anchor=south west}]
+\addplot[ 
+scatter/classes={
+	consensus={mark=diamond*,blue!70!black,mark size=1.5},%
+	zeroconf={mark=triangle*,red,mark size=1.5},%
+	zeroconf-tb={mark=*,brown!70, mark size=1.5},%
+	dpm={mark=pentagon*,green!40!black, mark size=1.5},
+	team={mark=square*,mark size=1.5}
+},
+scatter,only marks,
+scatter src=explicit symbolic]
+table[x=storm,y=prism,meta=benchmark, col sep=semicolon]
+{mdpScatterPlot.csv};
+\addplot[no marks,forget plot] coordinates
+{(0.005,0.005) (200,200) };
+\legend{consensus,zeroconf,zeroconf-tb,dpm,team}
+\end{axis}
+\end{tikzpicture} 
+\hfill
+\begin{tikzpicture}
+\begin{axis}[
+width=4.4cm,
+height=4.4cm,
+xmin=0.001,
+ymin=0.001,
+ymax=30000,
+xmax=30000,
+xmode=log,
+ymode=log,
+axis x line=bottom,
+axis y line=left,
+x label style={at={(axis description cs:0.5,0.01)},anchor=north},
+y label style={at={(axis description cs:0.11,.5)},anchor=south},
+ytick={0.001, 0.1, 1, 10, 100, 1000, 10000}, 
+yticklabels={0.001, 0.1, 1, 10, 100, 1000, 10000}, 
+xtick={0.001, 0.1, 1, 10, 100, 1000, 10000},
+xticklabels={0.001, 0.1, 1, 10, 100, 1000, 10000},
+xlabel=\storm,
+ylabel=\imca,
+yticklabel style={font=\tiny},
+xticklabel style={rotate=290, anchor=west, font=\tiny},
+legend style={font=\tiny,at={(axis cs:400,0.003)},anchor=south west}]
+
+\addplot[ 
+scatter/classes={
+	jobs={mark=diamond*,blue!70!black,mark size=1.5},%
+	polling={mark=triangle*,red,mark size=1.5},%
+	stream={mark=*,brown!70, mark size=1.5},%
+	mutex={mark=pentagon*,green!40!black, mark size=1.5}%%
+},
+scatter,only marks,
+scatter src=explicit symbolic]
+table[x=storm,y=imca,meta=benchmark, col sep=semicolon]
+{singleObjScatterPlot.csv};
+
+\addplot[no marks,forget plot] coordinates
+{(0.001,0.001) (30000,30000) };
+\legend{jobs,polling,stream,mutex}
+\end{axis}
+\end{tikzpicture} 
+
+\begin{table}[tb]
+	\centering
+	\caption{Experimental results for multi-objective MAs.}
+	\input{maRes}
+\end{table}
+\begin{table}[tb]
+	\centering
+	\caption{Details of MA Benchmarks.}
+	\input{maDetails}
+\end{table}
+\begin{table}[tb]
+	\centering
+	\caption{Experimental results for multi-objective MDPs.}
+	\input{mdpresults}
+\end{table}
+\begin{table}[tb]
+	\centering
+	\caption{Experimental results for single-objective MAs.}
+	\input{singleobjresults}
+\end{table}
+\end{document}""")
     
