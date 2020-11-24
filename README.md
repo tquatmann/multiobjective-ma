@@ -6,7 +6,7 @@ This repository contains benchmark files for multi-objective model checking of M
 ## Multi-objective model checking with Storm
 
 We have integrated multi-objective model checking of Markov Automata (MAs) and Markov Decision Processes (MDPs) into the model checker Storm. 
-Please visit http://www.stormchecker.org to obtain a recent version of Storm. For our experiments we considered the version with git commit `d0c153da8df7d2aed3e348f2c70fc7b74c26f220`.
+Please visit http://www.stormchecker.org to obtain a recent version of Storm. For our experiments we considered Storm version 1.6.3.
 
 When storm has been installed, it can be invoked via
 
@@ -49,7 +49,7 @@ More information can be found on the [website of Storm](http://www.stormchecker.
 ## Benchmarking scripts
 
 We provide a few scripts that can help with the execution of the benchmarks.
-Before running the scriupts, it might be necessary to adapt the file `settings.sh` to set, e.g., the path to the storm binary.
+Before running the scripts, it might be necessary to adapt the file `settings.sh` to set, e.g., the path to the storm binary.
 
 * `./pareto_curve.sh`  invokes Storm in a way that it exports the resulting over- and under-approximation in .csv files. Afterwards, a simple python script is invoked to display the result.
 * `./multi_obj_ma.sh`  calls Storm for different MA case studies and objectives and stores the output into different log files.
@@ -57,3 +57,4 @@ Before running the scriupts, it might be necessary to adapt the file `settings.s
 * `./multi_obj_mdp.sh` calls Storm and PRISM for the different case studies. For PRISM, we consider standard value iteration (see log files `prism_*.log`) and Gauss-Seidel value iteration (see log files `Prism-gs_*.log`).
 * `./single_obj_ma.sh` calls Storm and IMCA for the different case studies. We consider IMCA with and without enabling expected-time value iteration (see log files `imca-val*.log` and `imca-*.log`, respectively)
 
+After enough benchmarks have been executed, the command `python postprocess.py logs/` extracts relevant data and creates suitable .tex and .csv files.
