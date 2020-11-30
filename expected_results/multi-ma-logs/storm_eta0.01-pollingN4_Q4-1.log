@@ -1,0 +1,171 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 17:57:55 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling1.csl -const 'N=4,Q=4' '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 3.516s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	813287
+Transitions: 	2088294
+Choices: 	1624533
+Markovian St.: 	465125
+Max. Rate: 	16
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 523520 item(s)
+   * q1full -> 523520 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	813287
+Transitions: 	2088294
+Choices: 	1624533
+Markovian St.: 	465125
+Max. Rate: 	16
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 523520 item(s)
+   * q1full -> 523520 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"]) ...
+Preprocessing done in 4.560s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"processedjobs1"}max=? [F "q1full"] 	Preprocessed: R[exp]{"obj1"}max=? [C] 	result bounds: >=0
+Original: R[exp]{"processedjobs2"}max=? [F "q2full"] 	Preprocessed: R[exp]{"obj2"}max=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	813287
+Transitions: 	2088294
+Choices: 	1624533
+Markovian St.: 	465125
+Max. Rate: 	16
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 523520 item(s)
+   * q1full -> 523520 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	673461
+Transitions: 	1733170
+Choices: 	1256319
+Markovian St.: 	260783
+Max. Rate: 	16
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 174592 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 195840 item(s)
+   * q2full -> 195840 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 260784 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 498870 states.
+Final preprocessed model has 1081728 actions.
+
+Pareto Curve Approximation Algorithm terminated after 10 refinement steps.
+Solving multi-objective query took 154.373s seconds (consisting of 4.560s seconds for preprocessing and 149.796s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 9 Halfspaces:
+   (  0.357589,          1) * x <= 2.54151
+   (  0.436255,          1) * x <= 2.80308
+   (  0.244357,          1) * x <= 2.23688
+   (         1,   0.798961) * x <= 4.83885
+   (  0.538277,          1) * x <= 3.16953
+   (         1,          0) * x <= 4.15958
+   (  0.340719,          1) * x <= 2.49302
+   (  0.779895,          1) * x <= 4.12434
+   (         0,          1) * x <= 1.63584
+
+Overapproximation of achievable values: Polytope with 10 Halfspaces:
+   (         1,          0) * x <= 4.15957
+   (         0,          1) * x <= 1.63584
+   (  0.202496,   0.797504) * x <= 1.80417
+   (   0.35893,    0.64107) * x <= 2.08665
+   (  0.587258,   0.412742) * x <= 2.79365
+   (  0.296401,   0.703599) * x <= 1.93717
+   ( 0.0236724,   0.976328) * x <= 1.65534
+   (  0.480472,   0.519528) * x <= 2.4511
+   (  0.260421,   0.739579) * x <= 1.86802
+   (  0.331033,   0.668967) * x <= 2.01594
+
+8 Pareto optimal points found:
+   (3.951752456, 1.042391824 )
+   (4.095725643, 0.9301078564 )
+   (4.159575542, 0.8501916711 )
+   (2.459663151, 1.635840932 )
+   (2.658150845, 1.587339148 )
+   ( 3.59186405, 1.236111316 )
+   (2.874313162, 1.513688443 )
+   (3.325056168, 1.352507482 )
+
+
+Time for model checking: 154.374s.
+
+Performance statistics:
+  * peak memory usage: 607MB
+  * CPU time: 157.257s
+  * wallclock time: 157.916s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling1.csl -const N=4,Q=4 --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 157.25
+	System time (seconds): 0.29
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:37.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 621976
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 169869
+	Voluntary context switches: 32
+	Involuntary context switches: 403
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

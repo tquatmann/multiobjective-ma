@@ -1,0 +1,132 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 12:50:09 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma -const N=30 --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/singleobjective/stream1.csl -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.013s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"buffering"}min=? [F "done"]) ...
+Preprocessing done in 0.002s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"buffering"}min=? [F "done"])
+
+The query considers 1 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"buffering"}min=? [F "done"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 1.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1424
+Transitions: 	2729
+Choices: 	1859
+Markovian St.: 	929
+Max. Rate: 	8
+Reward Models:  obj1
+State Labels: 	4 labels
+   * deadl -> 59 item(s)
+   * deadlock -> 0 item(s)
+   * done -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 901 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 1366 states.
+Final preprocessed model has 1801 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 0.009s seconds (consisting of 0.002s seconds for preprocessing and 0.006s seconds for analyzing the preprocessed model).
+Result (for initial states): 1.538672595
+Time for model checking: 0.009s.
+
+Performance statistics:
+  * peak memory usage: 31MB
+  * CPU time: 0.068s
+  * wallclock time: 0.102s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma -const N=30 --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/singleobjective/stream1.csl -tm -stats"
+	User time (seconds): 0.07
+	System time (seconds): 0.01
+	Percent of CPU this job got: 10%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9191
+	Voluntary context switches: 92
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,85 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2048m
+PRISM
+=====
+
+Version: 4.6
+Date: Thu Nov 26 17:21:20 GMT+01:00 2020
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs
+
+Parsing model file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05.nm"...
+
+Type:        MDP
+Modules:     scheduler P1 P2 
+Variables:   task1 task2 task3 task4 task5 task6 p1 c1 x1 p2 c2 x2 
+
+Parsing properties file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05_pareto.pctl"...
+
+1 property:
+(1) multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(R{"energy"}min=? [ C ], R{"time"}min=? [ C ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 99 iterations in 0.20 seconds (average 0.002010, setup 0.00)
+
+Time for model construction: 0.249 seconds.
+
+Type:        MDP
+States:      31965 (1 initial)
+Transitions: 60434
+Choices:     57965
+
+Transition matrix: 7870 nodes (5 terminal), 60434 minterms, vars: 30r/30c/10nd
+Total time for product construction: 0.0 seconds.
+
+States:      31965 (1 initial)
+Transitions: 60434
+Choices:     57965
+
+Transition matrix: 7870 nodes (5 terminal), 60434 minterms, vars: 30r/30c/10nd
+
+Prob0A: 1 iterations in 0.00 seconds (average 0.001000, setup 0.00)
+
+yes = 0, no = 0, maybe = 31965
+
+Computing remaining probabilities...
+Engine: Sparse
+Optimising weighted sum for reward objective 1/2: weights (1.0, 0.0)
+Iterative method: 10000 iterations in 15.52 seconds (average 0.001552, setup 0.00)
+Ignoring the last multi-objective computation since it did not complete successfully
+Optimising weighted sum for reward objective 1/2: weights (0.9999000099990001, 9.999000099990002E-5)
+Iterative method: 10000 iterations in 15.52 seconds (average 0.001552, setup 0.00)
+
+Error: Iterative method did not converge within 10000 iterations.
+Consider using a different numerical method or increasing the maximum number of iterations.
+
+	Command being timed: "/home/tq429871/prism/prism/bin/prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler05_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs"
+	User time (seconds): 32.09
+	System time (seconds): 0.09
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.08
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 109448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 30010
+	Voluntary context switches: 2502
+	Involuntary context switches: 140
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

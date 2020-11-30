@@ -1,0 +1,73 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 12:50:12 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/singleobjective/jobs1_single.csl -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.012s.
+
+Time for model construction: 0.127s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": T[exp]min=? [F "all_jobs_finished"] ...
+Result (for initial states): 3.052025694
+Time for model checking: 0.016s.
+
+Performance statistics:
+  * peak memory usage: 32MB
+  * CPU time: 0.187s
+  * wallclock time: 0.229s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/singleobjective/jobs1_single.csl -tm -stats"
+	User time (seconds): 0.19
+	System time (seconds): 0.01
+	Percent of CPU this job got: 45%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.44
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 33676
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9637
+	Voluntary context switches: 38
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

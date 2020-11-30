@@ -1,0 +1,208 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 11:14:33 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs2.csl '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.009s.
+
+Time for model construction: 0.125s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 2772 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 2772 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "all_jobs_finished"], Pmax=? [true U<=(10 / (4 * 2)) "half_of_jobs_finished"]) ...
+Preprocessing done in 0.025s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], Pmax=? [true U<=(10 / (4 * 2)) "half_of_jobs_finished"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: Pmax=? [true U<=(10 / (4 * 2)) "half_of_jobs_finished"] 	Preprocessed: R[exp]{"obj2"}max=? [C<=(10 / (4 * 2))] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 1.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 2772 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+   * half_of_jobs_finished -> 2772 item(s)
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 11531 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 12554 states.
+Final preprocessed model has 23061 actions.
+
+Pareto Curve Approximation Algorithm terminated after 21 refinement steps.
+Solving multi-objective query took 276.741s seconds (consisting of 0.025s seconds for preprocessing and 276.714s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 22 Halfspaces:
+   ( -0.688737,          1) * x <= -1.47321
+   (        -1,   0.451319) * x <= -2.84258
+   (        -1,   0.258003) * x <= -2.9646
+   (        -1,   0.244521) * x <= -2.97072
+   (        -1,   0.291467) * x <= -2.94649
+   (        -1,   0.276358) * x <= -2.95487
+   (        -1,   0.305094) * x <= -2.9381
+   (        -1,     0.3892) * x <= -2.88393
+   (        -1,          0) * x <= -3.05203
+   (        -1,   0.585381) * x <= -2.75066
+   (        -1,   0.722008) * x <= -2.6552
+   (        -1, 6.52931e-05) * x <= -3.05203
+   (        -1,   0.340384) * x <= -2.91568
+   (        -1,   0.205925) * x <= -2.98706
+   (-0.00438967,          1) * x <= 0.695149
+   (         0,          1) * x <= 0.709257
+   (        -1,  0.0803223) * x <= -3.02919
+   (        -1,   0.143332) * x <= -3.00982
+   (        -1,   0.935238) * x <= -2.50477
+   (        -1,   0.179821) * x <= -2.99709
+   (        -1,   0.107589) * x <= -3.02104
+   (        -1,   0.521551) * x <= -2.79479
+
+Overapproximation of achievable values: Polytope with 21 Halfspaces:
+   (        -1,          0) * x <= -3.05203
+   (         0,          1) * x <= 0.709893
+   ( -0.814149,   0.185851) * x <= -2.42368
+   ( -0.671712,   0.328288) * x <= -1.89182
+   ( -0.309081,   0.690919) * x <= -0.488939
+   ( -0.950091,  0.0499092) * x <= -2.88491
+   (  -0.77308,    0.22692) * x <= -2.27638
+   ( -0.862065,   0.137935) * x <= -2.58909
+   ( -0.602983,   0.397017) * x <= -1.62737
+   ( -0.788104,   0.211896) * x <= -2.33136
+   ( -0.731545,   0.268455) * x <= -2.11981
+   ( -0.892081,   0.107919) * x <= -2.69069
+   ( -0.539529,   0.460471) * x <= -1.38207
+   ( -0.837768,   0.162232) * x <= -2.50587
+   ( -0.797372,   0.202628) * x <= -2.36477
+   ( -0.704335,   0.295665) * x <= -2.01643
+   ( -0.646208,   0.353792) * x <= -1.79396
+   ( -0.757138,   0.242862) * x <= -2.2165
+   (  -0.47633,    0.52367) * x <= -1.1373
+   ( -0.913733,  0.0862671) * x <= -2.76344
+   ( -0.776969,   0.223031) * x <= -2.29072
+
+21 Pareto optimal points found:
+   ( 3.05481923, 0.3139678897 )
+   (3.053185222, 0.2987804303 )
+   (3.052044275, 0.2845758058 )
+   (3.155348805, 0.6913257326 )
+   (3.168501135, 0.7090572311 )
+   (3.166839316, 0.7079126751 )
+   (3.059824219, 0.3488867663 )
+   (3.143020099, 0.6656885542 )
+   (3.213932681, 0.7092566604 )
+   (3.149718649, 0.6805307138 )
+   (3.074272415, 0.4234975241 )
+   (3.081756967, 0.4541065373 )
+   (3.101273624, 0.5297515636 )
+   (3.164540287, 0.7054544465 )
+   (3.137062234, 0.6503805802 )
+   (3.052025694,           0 )
+   (3.131853893, 0.635079201 )
+   ( 3.10822983, 0.5549225623 )
+   (3.066134494, 0.3839787132 )
+   (3.126009012, 0.6159215351 )
+   (3.159674302, 0.6987149322 )
+
+
+Time for model checking: 276.741s.
+
+Performance statistics:
+  * peak memory usage: 38MB
+  * CPU time: 276.231s
+  * wallclock time: 276.882s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs2.csl --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 276.23
+	System time (seconds): 0.03
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:36.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 39812
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 25201
+	Voluntary context switches: 90
+	Involuntary context switches: 134
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

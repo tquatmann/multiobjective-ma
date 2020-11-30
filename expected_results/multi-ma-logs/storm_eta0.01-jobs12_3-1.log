@@ -1,0 +1,188 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:56:32 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs12_3.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs1.csl '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.064s.
+
+Time for model construction: 3.411s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	116814
+Transitions: 	450783
+Choices: 	225437
+Markovian St.: 	112719
+Max. Rate: 	8.5
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 19404 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	116814
+Transitions: 	450783
+Choices: 	225437
+Markovian St.: 	112719
+Max. Rate: 	8.5
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 19404 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"]) ...
+Preprocessing done in 0.398s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: T[exp]min=? [F "half_of_jobs_finished"] 	Preprocessed: R[exp]{"obj2"}min=? [C] 	result bounds: >=0
+Original: R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj3"}min=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 3.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	116814
+Transitions: 	450783
+Choices: 	225437
+Markovian St.: 	112719
+Max. Rate: 	8.5
+Reward Models:  avg_waiting_time
+State Labels: 	4 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * half_of_jobs_finished -> 19404 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	116814
+Transitions: 	450783
+Choices: 	225437
+Markovian St.: 	112719
+Max. Rate: 	8.5
+Reward Models:  obj3, obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+   * half_of_jobs_finished -> 19404 item(s)
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 112719 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 116814 states.
+Final preprocessed model has 225437 actions.
+
+Pareto Curve Approximation Algorithm terminated after 11 refinement steps.
+Solving multi-objective query took 3.762s seconds (consisting of 0.398s seconds for preprocessing and 3.361s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   ( -0.750993,          0,         -1) * x <= -3.35343
+   (        -1,          0,  -0.381252) * x <= -3.27216
+   ( -0.163213,         -1,          0) * x <= -1.32172
+   ( -0.472153,          0,         -1) * x <= -2.53961
+   ( -0.200451,         -1,  -0.113524) * x <= -1.56227
+   (        -1,  -0.249474,  -0.168532) * x <= -3.3107
+   ( -0.192547,          0,         -1) * x <= -1.70859
+   (        -1,  -0.398912,          0) * x <= -3.25582
+   (        -1,    -0.2021,  -0.163547) * x <= -3.24149
+   (        -1,          0,  -0.816487) * x <= -3.84369
+   (         0,         -1,          0) * x <= -0.837508
+   (        -1,          0,  -0.545326) * x <= -3.49592
+   (        -1,  -0.330544,          0) * x <= -3.17799
+   (        -1,  -0.254581,          0) * x <= -3.07648
+   (        -1,          0,          0) * x <= -2.71265
+   (        -1,  -0.247933,  -0.151796) * x <= -3.28584
+   (        -1,  -0.273275,  -0.162554) * x <= -3.33146
+   (         0,          0,         -1) * x <= -1.12084
+   (        -1,   -0.37463,          0) * x <= -3.23165
+   (        -1,  -0.279789,  -0.244628) * x <= -3.43928
+   (        -1,  -0.258354,  -0.224652) * x <= -3.39328
+
+Overapproximation of achievable values: Polytope with 11 Halfspaces:
+   (        -1,          0,          0) * x <= -2.71265
+   (         0,         -1,          0) * x <= -0.837508
+   (         0,          0,         -1) * x <= -1.12084
+   ( -0.699545,  -0.300455,          0) * x <= -2.29569
+   ( -0.597691,          0,  -0.402309) * x <= -2.18743
+   ( -0.246999,          0,  -0.753001) * x <= -1.58975
+   ( -0.734468,  -0.252058, -0.0134741) * x <= -2.36393
+   ( -0.770855,  -0.229145,          0) * x <= -2.41548
+   ( -0.497661,          0,  -0.502339) * x <= -2.02872
+   ( -0.688077,          0,  -0.311923) * x <= -2.31913
+   ( -0.722321,  -0.277679,          0) * x <= -2.34133
+
+11 Pareto optimal points found:
+   ( 3.05246092, 0.8375076792, 1.120843781 )
+   (2.736274096, 1.336320943, 1.437771021 )
+   ( 2.77560948, 1.217318982,  1.37300733 )
+   (2.858736797, 0.9954274074,  1.23465436 )
+   (2.796532193, 1.194587004, 1.282510402 )
+   (2.966746933, 0.8375076792, 1.145787692 )
+   (2.972111873, 0.8375076792, 1.136314729 )
+   (2.712648718, 1.429121963,  1.46755022 )
+   (2.752205667, 1.317354961, 1.363794881 )
+   (2.858289172, 1.021317295,  1.20687298 )
+   (2.918597966, 0.8453662247, 1.161581481 )
+
+
+Time for model checking: 3.763s.
+
+Performance statistics:
+  * peak memory usage: 130MB
+  * CPU time: 7.185s
+  * wallclock time: 7.257s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs12_3.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs1.csl --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 7.19
+	System time (seconds): 0.06
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 133244
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 43445
+	Voluntary context switches: 36
+	Involuntary context switches: 55
+	Swaps: 0
+	File system inputs: 80
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

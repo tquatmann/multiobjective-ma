@@ -1,0 +1,126 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2048m
+PRISM
+=====
+
+Version: 4.6
+Date: Thu Nov 26 14:56:31 GMT+01:00 2020
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs
+
+Parsing model file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2.nm"...
+
+Type:        MDP
+Modules:     process1 process2 coin1_error coin2_error coin3_error 
+Variables:   s1 r1 p1 s2 r2 p2 c1 v1 c2 v2 c3 v3 
+
+Parsing properties file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2_pareto.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F "one_proc_err" ], Pmax=? [ G "one_coin_ok" ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F "one_proc_err" ], Pmax=? [ G "one_coin_ok" ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 39 iterations in 0.02 seconds (average 0.000538, setup 0.00)
+
+Time for model construction: 0.078 seconds.
+
+Type:        MDP
+States:      3169 (1 initial)
+Transitions: 5468
+Choices:     5468
+
+Transition matrix: 5160 nodes (2 terminal), 5468 minterms, vars: 25r/25c/27nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.015 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 39 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+States:      3169 (1 initial)
+Transitions: 5468
+Choices:     5468
+
+Transition matrix: 5368 nodes (2 terminal), 5468 minterms, vars: 26r/26c/27nd
+
+Building deterministic Rabin automaton (for G "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 39 iterations in 0.01 seconds (average 0.000359, setup 0.00)
+States:      3169 (1 initial)
+Transitions: 5468
+Choices:     5468
+
+Transition matrix: 5692 nodes (2 terminal), 5468 minterms, vars: 27r/27c/27nd
+Total time for product construction: 0.065 seconds.
+
+States:      3169 (1 initial)
+Transitions: 5468
+Choices:     5468
+
+Transition matrix: 5692 nodes (2 terminal), 5468 minterms, vars: 27r/27c/27nd
+
+Finding accepting end components for F "one_proc_err"...
+Time for end component identification: 0.001 seconds.
+
+Finding accepting end components for G "one_coin_ok"...
+Time for end component identification: 0.001 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001909, setup 0.00)
+
+yes = 176, no = 464, maybe = 2529
+
+Computing remaining probabilities...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000103, setup 0.00)
+Computed point: (1.0, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 9 iterations in 0.00 seconds (average 0.000111, setup 0.00)
+Computed point: (0.0, 1.0)
+Optimising weighted sum of objectives: weights (0.5, 0.5)
+Iterative method: 12 iterations in 0.00 seconds (average 0.000083, setup 0.00)
+The value iteration(s) took 0.019 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 0.019 s.
+
+Value in the initial state: [(1.0, 0.0), (0.0, 1.0)]
+
+Time for model checking: 0.257 seconds.
+
+Result: [(1.0, 0.0), (0.0, 1.0)] (value in the initial state)
+
+	Command being timed: "/home/tq429871/prism/prism/bin/prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/consensus/consensus2_5_2_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs"
+	User time (seconds): 0.86
+	System time (seconds): 0.09
+	Percent of CPU this job got: 75%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 104784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 19364
+	Voluntary context switches: 2049
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

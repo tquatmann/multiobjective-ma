@@ -1,0 +1,132 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:58:56 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma -const 'N=3,Q=3' --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/singleobjective/polling2.csl '--multiobjective:precision' 0.001 -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.047s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmin=? [true U<=2 "q1full"]) ...
+Preprocessing done in 0.017s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "q1full"])
+
+The query considers 1 objectives:
+--------------------------------------------------------------
+Original: Pmin=? [true U<=2 "q1full"] 	Preprocessed: R[exp]{"obj1"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	7389
+Transitions: 	15050
+Choices: 	11995
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  obj1
+State Labels: 	4 labels
+   * deadl -> 3240 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 3240 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 1562 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 4150 states.
+Final preprocessed model has 8756 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 53.296s seconds (consisting of 0.017s seconds for preprocessing and 53.279s seconds for analyzing the preprocessed model).
+Result (for initial states): 0.3785816971
+Time for model checking: 53.297s.
+
+Performance statistics:
+  * peak memory usage: 32MB
+  * CPU time: 53.246s
+  * wallclock time: 53.357s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma -const N=3,Q=3 --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/singleobjective/polling2.csl --multiobjective:precision 0.001 -tm -stats"
+	User time (seconds): 53.24
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:53.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 33968
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11575
+	Voluntary context switches: 34
+	Involuntary context switches: 21
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

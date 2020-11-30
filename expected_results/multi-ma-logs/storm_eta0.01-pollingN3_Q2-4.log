@@ -1,0 +1,213 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 20:22:34 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling4.csl -const 'N=3,Q=2' '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"], Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 0.005s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"], Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+The query considers 4 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"processedjobs1"}max=? [F "q1full"] 	Preprocessed: R[exp]{"obj1"}max=? [C] 	result bounds: >=0
+Original: R[exp]{"processedjobs2"}max=? [F "q2full"] 	Preprocessed: R[exp]{"obj2"}max=? [C] 	result bounds: >=0
+Original: Pmin=? [true U<=2 "q1full"] 	Preprocessed: R[exp]{"obj3"}min=? [C<=2] 	result bounds: [0, 1]
+Original: Pmin=? [true U<=2 "q2full"] 	Preprocessed: R[exp]{"obj4"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1449
+Transitions: 	3255
+Choices: 	2550
+Markovian St.: 	822
+Max. Rate: 	14
+Reward Models:  obj2, obj1, obj4, obj3
+State Labels: 	5 labels
+   * deadl -> 459 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 603 item(s)
+   * q2full -> 603 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 364 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 991 states.
+Final preprocessed model has 2092 actions.
+
+ WARN (SparsePcaaQuery.cpp:119): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 5.19941e-09.
+Pareto Curve Approximation Algorithm terminated after 16 refinement steps.
+Solving multi-objective query took 97.252s seconds (consisting of 0.005s seconds for preprocessing and 97.247s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 40 Halfspaces:
+   ( 0.0276247,   0.416822,         -1,  -0.573696) * x <= -1.15823
+   (         0,   0.300757,         -1,  -0.392675) * x <= -1.02411
+   (         0,   0.454564,         -1,  -0.643931) * x <= -1.2222
+   ( 0.0949354,   0.191681,  -0.691681,         -1) * x <= -1.36764
+   (  0.242055,          0,          0,         -1) * x <= -0.858483
+   ( 0.0989836,          0,  -0.521451,         -1) * x <= -1.28819
+   ( 0.0943271,   0.203521,  -0.708014,         -1) * x <= -1.37688
+   ( 0.0165602,          0,  -0.354904,         -1) * x <= -1.18869
+   (         0,          0,         -1,  -0.469668) * x <= -1.16779
+   (         0,          0,          0,         -1) * x <= -0.9266
+   (         0,          0,  -0.371113,         -1) * x <= -1.20491
+   (         0,          1,  -0.819973,          0) * x <= -0.3459
+   ( 0.0678575,   0.601999,         -1,          0) * x <= -0.562152
+   (  0.623537,          0,          0,         -1) * x <= -0.745405
+   (         1,    0.84209,          0,  -0.066988) * x <= 0.449536
+   (0.00950764,          1,  -0.780432,          0) * x <= -0.313916
+   (  0.926609,          1,          0,          0) * x <= 0.53157
+   (         0,   0.458028,         -1,  -0.901173) * x <= -1.46174
+   (         1,          0,          0, -0.00899454) * x <= 0.304575
+   (         0,          0,         -1, -0.0804768) * x <= -0.801717
+   (  0.926614,          1, -2.70131e-07,          0) * x <= 0.531571
+   (         0,          1,          0, -2.48561e-05) * x <= 0.269002
+   (         0,   0.782598,         -1,          0) * x <= -0.535219
+   (         0,          1, -2.49654e-05,          0) * x <= 0.269006
+   ( 0.0448193,          0,         -1,          0) * x <= -0.711991
+   (         0,   0.308326,         -1,          0) * x <= -0.652972
+   (         1,    0.60712,          0,  -0.754467) * x <= -0.252772
+   ( 0.0284443,          0,  -0.364651,         -1) * x <= -1.19264
+   (         1,   0.751699,          0,  -0.411347) * x <= 0.104219
+   ( 0.0233959,   0.390742,  -0.916003,         -1) * x <= -1.50269
+   (         1,   0.867778, -0.0149084,          0) * x <= 0.507807
+   (         1,          0, -0.00195026,          0) * x <= 0.311619
+   (         0,          1,          0,          0) * x <= 0.269025
+   (         0,          0,         -1,          0) * x <= -0.724039
+   (   0.92661,          1, -2.3402e-08,          0) * x <= 0.53157
+   (   0.92661,          1,          0, -2.43508e-08) * x <= 0.53157
+   (         0,  0.0559219,         -1,          0) * x <= -0.712772
+   (  0.926611,          1,          0, -8.46261e-08) * x <= 0.53157
+   (         1,          0,          0,          0) * x <= 0.31357
+   ( 0.0122365,          0,          0,         -1) * x <= -0.9236
+
+Overapproximation of achievable values: Polytope with 16 Halfspaces:
+   (         1,          0,          0,          0) * x <= 0.313569
+   (         0,          1,          0,          0) * x <= 0.269025
+   (         0,          0,         -1,          0) * x <= -0.719539
+   (         0,          0,          0,         -1) * x <= -0.922977
+   (  0.336488,   0.587665, -0.0758474,          0) * x <= 0.19686
+   (         0,   0.265387,  -0.301831,  -0.432782) * x <= -0.553315
+   (  0.489218,          0,  -0.126667,  -0.384115) * x <= -0.29726
+   (  0.270128,    0.44815,          0,  -0.281722) * x <= -0.0629135
+   (         0,   0.426891,  -0.573109,          0) * x <= -0.308892
+   (  0.519474,   0.480526,          0, -1.30446e-10) * x <= 0.278704
+   (  0.511297,    0.48053, -0.00817271,          0) * x <= 0.270305
+   (  0.480953,   0.519047,          0,          0) * x <= 0.275909
+   (         0,          0,  -0.369171,  -0.630829) * x <= -0.855254
+   (  0.215422,          0,          0,  -0.784578) * x <= -0.662324
+   ( 0.0861313,   0.349582,    -0.3502,  -0.214087) * x <= -0.340192
+   (  0.100451,   0.242627,  -0.139621,    -0.5173) * x <= -0.487924
+
+10 Pareto optimal points found:
+   (0.3135695458, 0.2410132866, 1.100127519,  1.31961244 )
+   (0.3135695458, 0.2410132596,           1,           1 )
+   (0.2688044139, 0.201472697, 0.7240386493, 0.9652271076 )
+   (0.245180532, 0.2690251642, 0.7499336469, 0.9265999573 )
+   (0.2833390193, 0.2690251758, 0.7503985288, 0.927066882 )
+   ( 0.29641851, 0.251416007, 0.7427366175, 0.9302328402 )
+   (0.2936527337, 0.2594683883, 0.7382786635, 0.9346757709 )
+   (0.3130352158, 0.2369220539, 0.726021044, 0.9405939788 )
+   (0.2638773385, 0.2482807199, 0.7295232151, 0.9403750438 )
+   (0.2657351653, 0.2385093641, 0.7289332165, 0.9343934926 )
+
+
+Time for model checking: 97.252s.
+
+Performance statistics:
+  * peak memory usage: 32MB
+  * CPU time: 97.058s
+  * wallclock time: 97.318s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling4.csl -const N=3,Q=2 --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 97.06
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:37.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 34064
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 12672
+	Voluntary context switches: 114
+	Involuntary context switches: 270
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

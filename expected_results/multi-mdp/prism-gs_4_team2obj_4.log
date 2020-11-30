@@ -1,0 +1,118 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2048m
+PRISM
+=====
+
+Version: 4.6
+Date: Thu Nov 26 14:58:30 GMT+01:00 2020
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs
+
+Parsing model file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4.nm"...
+
+Type:        MDP
+Modules:     controller sensor1 sensor2 sensor3 sensor4 
+Variables:   status t1_r1 t1_r2 t1_r3 t2_r1 t2_r2 t2_r3 turn1 turn2 turn3 turn4 turn5 state1 m1_t1 m1_t2 state2 m2_t1 m2_t2 state3 m3_t1 m3_t2 state4 m4_t1 m4_t2 
+
+Parsing properties file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4_pareto.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F "task1_compl" ], R{"w_1_total"}max=? [ C ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F "task1_compl" ], R{"w_1_total"}max=? [ C ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 16 iterations in 0.32 seconds (average 0.019813, setup 0.00)
+
+Time for model construction: 0.83 seconds.
+
+Type:        MDP
+States:      96665 (1 initial)
+Transitions: 116464
+Choices:     115289
+
+Transition matrix: 101788 nodes (4 terminal), 116464 minterms, vars: 36r/36c/13nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.016 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 16 iterations in 0.31 seconds (average 0.019500, setup 0.00)
+States:      96665 (1 initial)
+Transitions: 116464
+Choices:     115289
+
+Transition matrix: 109827 nodes (4 terminal), 116464 minterms, vars: 37r/37c/13nd
+Total time for product construction: 1.027 seconds.
+
+States:      96665 (1 initial)
+Transitions: 116464
+Choices:     115289
+
+Transition matrix: 109827 nodes (4 terminal), 116464 minterms, vars: 37r/37c/13nd
+
+Finding accepting end components for F "task1_compl"...
+Time for end component identification: 0.159 seconds.
+
+Prob0A: 13 iterations in 0.30 seconds (average 0.023154, setup 0.00)
+
+yes = 4872, no = 0, maybe = 91793
+
+Computing remaining probabilities...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/1: weights (1.0, 0.0)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003176, setup 0.00)
+Computed point: (1.000000000000001, 2.3265306122448983)
+Optimising weighted sum for reward objective 1/1: weights (0.0, 1.0)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003176, setup 0.00)
+Computed point: (0.0, 2.551020408163265)
+Optimising weighted sum of objectives: weights (0.1833333333333326, 0.8166666666666674)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003176, setup 0.00)
+Optimising weighted sum of objectives: weights (0.0, 1.0)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003235, setup 0.00)
+Optimising weighted sum of objectives: weights (0.5499999999999986, 0.4500000000000014)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003176, setup 0.00)
+Optimising weighted sum of objectives: weights (0.49999999999999956, 0.5000000000000004)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003118, setup 0.00)
+Optimising weighted sum of objectives: weights (0.6666666666666624, 0.3333333333333376)
+Iterative method: 17 iterations in 0.06 seconds (average 0.003118, setup 0.00)
+The value iteration(s) took 0.896 seconds altogether.
+Number of weight vectors used: 6
+Multi-objective value iterations took 0.897 s.
+
+Value in the initial state: [(0.8163265306122457, 2.551020408163265), (0.9591836734693883, 2.4081632653061225), (1.000000000000001, 2.3265306122448983)]
+
+Time for model checking: 137.202 seconds.
+
+Result: [(0.8163265306122457, 2.551020408163265), (0.9591836734693883, 2.4081632653061225), (1.000000000000001, 2.3265306122448983)] (value in the initial state)
+
+	Command being timed: "/home/tq429871/prism/prism/bin/prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/team/team2obj_4_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs"
+	User time (seconds): 139.21
+	System time (seconds): 0.48
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:18.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 534904
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 253527
+	Voluntary context switches: 5146
+	Involuntary context switches: 113
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

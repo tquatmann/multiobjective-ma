@@ -1,0 +1,126 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx2048m
+PRISM
+=====
+
+Version: 4.6
+Date: Thu Nov 26 17:20:48 GMT+01:00 2020
+Hostname: nihm017.hpc.itc.rwth-aachen.de
+Memory limits: cudd=1g, java(heap)=17.8g
+Command line: prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs
+
+Parsing model file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8.nm"...
+
+Type:        MDP
+Modules:     host0 env_error8 
+Variables:   x y coll probes mess defend ip l env k c1 c2 c3 c4 c5 c6 c7 c8 error 
+
+Parsing properties file "/home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8_pareto.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F l=4&ip=1 ], Pmax=? [ G (error=0) ])
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F l=4&ip=1 ], Pmax=? [ G (error=0) ])
+
+Building model...
+
+Computing reachable states...
+
+Reachability (BFS): 140 iterations in 0.11 seconds (average 0.000786, setup 0.00)
+
+Time for model construction: 0.18 seconds.
+
+Type:        MDP
+States:      17221 (1 initial)
+Transitions: 52163
+Choices:     50838
+
+Transition matrix: 4321 nodes (4 terminal), 52163 minterms, vars: 46r/46c/7nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.028 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 140 iterations in 0.09 seconds (average 0.000657, setup 0.00)
+States:      17221 (1 initial)
+Transitions: 52163
+Choices:     50838
+
+Transition matrix: 4412 nodes (4 terminal), 52163 minterms, vars: 47r/47c/7nd
+
+Building deterministic Rabin automaton (for G "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 140 iterations in 0.11 seconds (average 0.000779, setup 0.00)
+States:      17221 (1 initial)
+Transitions: 52163
+Choices:     50838
+
+Transition matrix: 5586 nodes (4 terminal), 52163 minterms, vars: 48r/48c/7nd
+Total time for product construction: 0.246 seconds.
+
+States:      17221 (1 initial)
+Transitions: 52163
+Choices:     50838
+
+Transition matrix: 5586 nodes (4 terminal), 52163 minterms, vars: 48r/48c/7nd
+
+Finding accepting end components for F l=4&ip=1...
+Time for end component identification: 0.096 seconds.
+
+Finding accepting end components for G (error=0)...
+Time for end component identification: 0.106 seconds.
+
+Prob0A: 94 iterations in 0.04 seconds (average 0.000372, setup 0.00)
+
+yes = 16117, no = 304, maybe = 800
+
+Computing remaining probabilities...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 86 iterations in 0.05 seconds (average 0.000547, setup 0.00)
+Computed point: (3.075787401574803E-4, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 3 iterations in 0.00 seconds (average 0.000333, setup 0.00)
+Computed point: (0.0, 1.0)
+Optimising weighted sum of objectives: weights (0.9996925158354345, 3.074841645655249E-4)
+Iterative method: 86 iterations in 0.05 seconds (average 0.000558, setup 0.00)
+The value iteration(s) took 0.144 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 0.144 s.
+
+Value in the initial state: [(3.075787401574803E-4, 0.9996924212598424), (0.0, 1.0)]
+
+Time for model checking: 9.709 seconds.
+
+Result: [(3.075787401574803E-4, 0.9996924212598424), (0.0, 1.0)] (value in the initial state)
+
+	Command being timed: "/home/tq429871/prism/prism/bin/prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8.nm /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8_pareto.pctl -paretoepsilon 0.001 -sparse -javamaxmem 20g -gs"
+	User time (seconds): 11.63
+	System time (seconds): 0.22
+	Percent of CPU this job got: 113%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 326340
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 98406
+	Voluntary context switches: 2970
+	Involuntary context switches: 22
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

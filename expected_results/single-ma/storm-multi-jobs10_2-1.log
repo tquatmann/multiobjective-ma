@@ -1,0 +1,132 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:56:31 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/singleobjective/jobs1.csl -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.108s.
+
+Time for model construction: 0.292s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "all_jobs_finished"]) ...
+Preprocessing done in 0.019s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"])
+
+The query considers 1 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 1.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	12554
+Transitions: 	34581
+Choices: 	23061
+Markovian St.: 	11531
+Max. Rate: 	5.7
+Reward Models:  obj1
+State Labels: 	4 labels
+   * deadl -> 1 item(s)
+   * all_jobs_finished -> 1 item(s)
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 11531 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 12554 states.
+Final preprocessed model has 23061 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 0.048s seconds (consisting of 0.019s seconds for preprocessing and 0.029s seconds for analyzing the preprocessed model).
+Result (for initial states): 3.052025694
+Time for model checking: 0.049s.
+
+Performance statistics:
+  * peak memory usage: 35MB
+  * CPU time: 0.223s
+  * wallclock time: 0.497s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs10_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/singleobjective/jobs1.csl -tm -stats"
+	User time (seconds): 0.22
+	System time (seconds): 0.04
+	Percent of CPU this job got: 14%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 36856
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 58
+	Minor (reclaiming a frame) page faults: 10377
+	Voluntary context switches: 499
+	Involuntary context switches: 15
+	Swaps: 0
+	File system inputs: 62976
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

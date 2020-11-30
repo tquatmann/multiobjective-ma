@@ -1,0 +1,101 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:57:37 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler25.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler25_pareto.pctl '--multiobjective:precision' 0.001 -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.025s.
+
+Time for model construction: 3.917s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	633735
+Transitions: 	1179444
+Choices: 	1168375
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"energy"}min=? [C], R[exp]{"time"}min=? [C]) ...
+Preprocessing done in 0.486s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"energy"}min=? [C], R[exp]{"time"}min=? [C])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"energy"}min=? [C] 	Preprocessed: R[exp]{"energy"}min=? [C] 	result bounds: >=0
+Original: R[exp]{"time"}min=? [C] 	Preprocessed: R[exp]{"time"}min=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	633735
+Transitions: 	1179444
+Choices: 	1168375
+Reward Models:  time, energy
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	633735
+Transitions: 	1179444
+Choices: 	1168375
+Reward Models:  energy, time
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+ERROR (StandardPcaaWeightVectorChecker.cpp:43): There is no Pareto optimal scheduler that yields finite reward for all objectives. This is not supported.
+ WARN (model-handling.h:892): Cannot handle property: NotSupportedException: There is no Pareto optimal scheduler that yields finite reward for all objectives. This is not supported.
+ERROR (model-handling.h:854): Property is unsupported by selected engine/settings.
+
+
+Performance statistics:
+  * peak memory usage: 182MB
+  * CPU time: 7.046s
+  * wallclock time: 7.158s
+	Command being timed: "/home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler25.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/scheduler/scheduler25_pareto.pctl --multiobjective:precision 0.001 -tm -stats"
+	User time (seconds): 7.05
+	System time (seconds): 0.06
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.21
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 186712
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 31621
+	Voluntary context switches: 35
+	Involuntary context switches: 6
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,155 @@
+Storm 1.6.3
+
+Date: Fri Nov 27 02:58:25 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling1.csl -const 'N=3,Q=2' '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"]) ...
+Preprocessing done in 0.003s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"processedjobs1"}max=? [F "q1full"] 	Preprocessed: R[exp]{"obj1"}max=? [C] 	result bounds: >=0
+Original: R[exp]{"processedjobs2"}max=? [F "q2full"] 	Preprocessed: R[exp]{"obj2"}max=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2387
+Choices: 	1762
+Markovian St.: 	508
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 576 item(s)
+   * q1full -> 576 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	990
+Transitions: 	2328
+Choices: 	1623
+Markovian St.: 	363
+Max. Rate: 	14
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 234 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 252 item(s)
+   * q2full -> 252 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 364 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 757 states.
+Final preprocessed model has 1390 actions.
+
+ WARN (SparsePcaaQuery.cpp:119): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 8.964e-10.
+Pareto Curve Approximation Algorithm terminated after 5 refinement steps.
+Solving multi-objective query took 0.042s seconds (consisting of 0.003s seconds for preprocessing and 0.038s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.31357
+   (         0,          1) * x <= 0.269025
+   (   0.92661,          1) * x <= 0.53157
+
+Overapproximation of achievable values: Polytope with 5 Halfspaces:
+   (         1,          0) * x <= 0.313569
+   (         0,          1) * x <= 0.269025
+   (  0.382769,   0.617231) * x <= 0.274504
+   (  0.680644,   0.319356) * x <= 0.290398
+   (  0.480954,   0.519046) * x <= 0.275909
+
+2 Pareto optimal points found:
+   (0.2833390183, 0.2690251707 )
+   (0.3135695458, 0.2410132539 )
+
+
+Time for model checking: 0.042s.
+
+Performance statistics:
+  * peak memory usage: 32MB
+  * CPU time: 0.098s
+  * wallclock time: 0.074s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling1.csl -const N=3,Q=2 --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 0.10
+	System time (seconds): 0.01
+	Percent of CPU this job got: 81%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32960
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9460
+	Voluntary context switches: 90
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

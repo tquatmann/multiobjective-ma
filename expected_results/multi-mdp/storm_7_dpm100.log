@@ -1,0 +1,134 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:58:37 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/dpm/dpm100.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/dpm/dpm100_pareto.pctl '--multiobjective:precision' 0.001 -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.016s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  queue, power
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"power"}min=? [C<=100], R[exp]{"queue"}min=? [C<=100]) ...
+Preprocessing done in 0.000s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"power"}min=? [C<=100], R[exp]{"queue"}min=? [C<=100])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"power"}min=? [C<=100] 	Preprocessed: R[exp]{"power"}min=? [C<=100] 	result bounds: >=0
+Original: R[exp]{"queue"}min=? [C<=100] 	Preprocessed: R[exp]{"queue"}min=? [C<=100] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  queue, power
+State Labels: 	2 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	636
+Transitions: 	2550
+Choices: 	1860
+Reward Models:  power, queue
+State Labels: 	2 labels
+   * init -> 1 item(s)
+   * deadlock -> 0 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 636 states.
+Final preprocessed model has 1860 actions.
+
+Pareto Curve Approximation Algorithm terminated after 9 refinement steps.
+Solving multi-objective query took 0.074s seconds (consisting of 0.000s seconds for preprocessing and 0.073s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   ( -0.027306,         -1) * x <= -73.304
+   (-0.0270904,         -1) * x <= -73.2945
+   (-0.0279882,         -1) * x <= -73.3287
+   (-0.0286697,         -1) * x <= -73.3472
+   (-0.0293504,         -1) * x <= -73.3586
+   (         0,         -1) * x <= -69.9753
+   (        -1,          0) * x <= -5
+
+Overapproximation of achievable values: Polytope with 9 Halfspaces:
+   (        -1,          0) * x <= -5
+   (         0,         -1) * x <= -69.9753
+   (-0.0267838,  -0.973216) * x <= -71.3482
+   (-0.0279256,  -0.972074) * x <= -71.2998
+   (-0.0263719,  -0.973628) * x <= -71.3611
+   (-0.0285135,  -0.971486) * x <= -71.2668
+   (-0.0275693,  -0.972431) * x <= -71.3166
+   (-0.0263947,  -0.973605) * x <= -71.3608
+   (-0.0272262,  -0.972774) * x <= -71.3322
+
+6 Pareto optimal points found:
+   (          5, 73.21179949 )
+   (16.74272123, 72.86714592 )
+   (27.06799873, 72.57112302 )
+   (122.5231459, 69.97534067 )
+   (36.14281996, 72.31713471 )
+   (44.11485403, 72.09945064 )
+
+
+Time for model checking: 0.074s.
+
+Performance statistics:
+  * peak memory usage: 31MB
+  * CPU time: 0.126s
+  * wallclock time: 0.134s
+	Command being timed: "/home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/dpm/dpm100.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/dpm/dpm100_pareto.pctl --multiobjective:precision 0.001 -tm -stats"
+	User time (seconds): 0.12
+	System time (seconds): 0.01
+	Percent of CPU this job got: 79%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9313
+	Voluntary context switches: 38
+	Involuntary context switches: 2
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,290 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 13:25:41 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs17_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs3.csl '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.027s.
+
+Time for model construction: 88.229s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"]) ...
+Preprocessing done in 21.508s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"])
+
+The query considers 4 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: T[exp]min=? [F "half_of_jobs_finished"] 	Preprocessed: R[exp]{"obj2"}min=? [C] 	result bounds: >=0
+Original: R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj3"}min=? [C] 	result bounds: >=0
+Original: Pmin=? [F "slowest_before_fastest"] 	Preprocessed: R[exp]{"obj4"}min=? [C] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 4.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	5480480
+Transitions: 	15949890
+Choices: 	10633282
+Markovian St.: 	5316642
+Max. Rate: 	5.9
+Reward Models:  obj4, obj3, obj2, obj1
+State Labels: 	6 labels
+   * deadl -> 2 item(s)
+   * all_jobs_finished -> 2 item(s)
+   * half_of_jobs_finished -> 891605 item(s)
+   * deadlock -> 2 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 5316641 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 5480479 states.
+Final preprocessed model has 10633281 actions.
+
+ WARN (SparsePcaaQuery.cpp:119): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 2.64698e-23.
+Pareto Curve Approximation Algorithm terminated after 22 refinement steps.
+Solving multi-objective query took 1149.859s seconds (consisting of 21.508s seconds for preprocessing and 1128.162s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 95 Halfspaces:
+   (  -0.02776, -0.00238667, -0.0140291,         -1) * x <= -0.176508
+   (        -1, -0.0608829, -0.00858637, -0.00330084) * x <= -5.14831
+   (        -1, -0.0610369, -0.00855392, -0.00333511) * x <= -5.14864
+   (        -1, -0.0578224, -0.0291766, -0.00178817) * x <= -5.19238
+   (        -1, -0.0414726, -0.0126753, -0.00414116) * x <= -5.10678
+   (        -1, -0.0389796, -0.0132005, -0.00478342) * x <= -5.10144
+   (        -1, -0.0420756, -0.00423172, -0.00367026) * x <= -5.08523
+   (        -1,          0,  -0.460852,  -0.144494) * x <= -6.08029
+   ( -0.235877,          0,  -0.108007,         -1) * x <= -1.43322
+   ( -0.651135,          0,  -0.288793,         -1) * x <= -3.93466
+   ( -0.613246,          0,         -1,          0) * x <= -5.27642
+   (-0.0333592,          0, -0.0192529,         -1) * x <= -0.211927
+   (        -1, -0.0435021, -0.0569245, -0.000406844) * x <= -5.22456
+   (        -1, -0.0577721, -0.0292625, -0.00180144) * x <= -5.19248
+   (        -1, -0.0669481, -0.0245236,          0) * x <= -5.20105
+   (        -1, -0.0653075, -0.0492895, -0.00167756) * x <= -5.25848
+   (-0.0170935, -0.000342698, -0.00125308,         -1) * x <= -0.0891949
+   (-0.0511925, -0.00256752, -0.000635017,         -1) * x <= -0.262832
+   (-0.0073479,          0, -0.00080186,         -1) * x <= -0.0386678
+   (        -1, -0.0780013,          0,          0) * x <= -5.16498
+   (        -1,  -0.099914,          0,          0) * x <= -5.21333
+   (        -1,          0,  -0.168366,          0) * x <= -5.39117
+   (-0.000143964,          0, -0.000134511,         -1) * x <= -0.00103425
+   (        -1,          0, -0.0596866, -0.00830879) * x <= -5.11523
+   (         0,          0,          0,         -1) * x <= -1.56927e-07
+   (        -1, -0.0311221, -0.0865863,          0) * x <= -5.26676
+   (        -1,          0,  -0.331019,          0) * x <= -5.78046
+   (        -1,          0,  -0.357366, -0.0996992) * x <= -5.84281
+   (        -1,  -0.107068,          0,          0) * x <= -5.22765
+   (        -1,          0,   -0.14618,          0) * x <= -5.33484
+   (         0,          0,         -1,          0) * x <= -2.09386
+   (        -1,  -0.251416,          0,          0) * x <= -5.51371
+   (-9.13264e-07, -2.09717e-07,          0,         -1) * x <= -5.31747e-06
+   (        -1, -0.0506507,  -0.118457,          0) * x <= -5.38969
+   (        -1, -0.0570707,  -0.423203,          0) * x <= -6.10232
+   (        -1, -0.0584299, -0.0250903, -0.00210218) * x <= -5.18365
+   (        -1,          0,          0,          0) * x <= -4.93636
+   (        -1, -0.0456008, -0.0017751, -0.00269706) * x <= -5.08807
+   (        -1,          0,  -0.443522,  -0.205771) * x <= -6.042
+   (        -1,  -0.199426,          0, -0.000990507) * x <= -5.41245
+   (        -1,  -0.047116,          0,          0) * x <= -5.08487
+   (-5.17795e-06,         -1, -4.03116e-06,          0) * x <= -1.84649
+   (        -1,          0, -0.0832301, -0.00430014) * x <= -5.17501
+   (        -1,          0,          0, -0.00785714) * x <= -4.94421
+   (        -1, -0.0370898, -0.0241136,          0) * x <= -5.12064
+   (         0,         -1,          0, -0.000185608) * x <= -1.84645
+   (        -1,          0, -0.0337319, -0.0042106) * x <= -5.04086
+   (        -1, -0.0455453, -0.00185748,          0) * x <= -5.08544
+   (-0.0133541,          0, -0.00143858,         -1) * x <= -0.0701879
+   (        -1,          0, -0.0833142,          0) * x <= -5.17096
+   (        -1, -0.0471032,          0, -0.00244801) * x <= -5.08727
+   (         0,         -1, -2.37286e-06,          0) * x <= -1.84646
+   (-2.82112e-06,          0,          0,         -1) * x <= -1.44627e-05
+   (        -1,  -0.184635, -0.0214636,          0) * x <= -5.43267
+   (        -1,          0, -0.0337997,          0) * x <= -5.03686
+   (-0.00514887,          0, -0.000707711,         -1) * x <= -0.0274562
+   (-0.0174333, -0.00489411, -0.00598958,         -1) * x <= -0.111095
+   (        -1, -0.0657342,          0, -0.00312092) * x <= -5.13791
+   (        -1,  -0.220345,          0,          0) * x <= -5.45318
+   (-3.5875e-06,         -1,          0,          0) * x <= -1.84647
+   (        -1,          0,  -0.193645, -0.0035844) * x <= -5.45536
+   (-2.13717e-08,         -1,          0, -0.000187469) * x <= -1.84645
+   (        -1, -0.0435369,          0, -0.0039982) * x <= -5.07758
+   (-1.77792e-06,         -1,          0, -0.000182541) * x <= -1.84646
+   (        -1,          0,  -0.852084,          0) * x <= -6.93998
+   (        -1,          0,  -0.495239,          0) * x <= -6.15577
+   (-1.24796e-06,          0, -4.57089e-07,         -1) * x <= -7.63662e-06
+   (        -1,          0,  -0.433604,  -0.225404) * x <= -6.01975
+   (        -1, -0.0435215, -0.0571465,          0) * x <= -5.22478
+   (-7.02844e-07,         -1, -3.15519e-06,          0) * x <= -1.84646
+   ( -0.802757,         -1,          0,          0) * x <= -5.90921
+   (        -1, -0.0621277,          0,          0) * x <= -5.12592
+   (        -1,          0,  -0.256242,          0) * x <= -5.60349
+   (        -1, -0.0720782, -0.0396462,          0) * x <= -5.24965
+   (         0,         -1,          0,          0) * x <= -1.84645
+   (-0.000175695,          0,          0,         -1) * x <= -0.000881153
+   (        -1, -0.0621453,          0, -0.00219654) * x <= -5.12816
+   ( -0.222758,          0,         -1,          0) * x <= -3.25813
+   (        -1, -0.0547776, -0.0482463, -0.0033775) * x <= -5.23268
+   (-0.000754279,          0,          0,         -1) * x <= -0.00376994
+   (        -1, -0.0575696, -0.0307872,          0) * x <= -5.19413
+   (-4.51628e-08,         -1,          0, -0.000188389) * x <= -1.84645
+   (        -1, -0.0185722,  -0.476165,          0) * x <= -6.14836
+   (-0.000114001, -0.000156307,          0,         -1) * x <= -0.000884612
+   (-0.000464912,          0, -0.000367194,         -1) * x <= -0.00318332
+   (-0.000239731, -0.000282631,          0,         -1) * x <= -0.00176772
+   (        -1,  -0.018771,  -0.268898,          0) * x <= -5.67505
+   (-0.00877254, -0.00610243,          0,         -1) * x <= -0.0561913
+   (        -1, -0.0372352, -0.0238133, -0.0034884) * x <= -5.12373
+   (-2.59793e-06,         -1, -4.23636e-06,          0) * x <= -1.84648
+   (-0.00973986,  -0.012133,          0,         -1) * x <= -0.0722779
+   (        -1,   -0.23238,          0, -0.0820507) * x <= -5.47839
+   (-1.70021e-22,          0,          0,         -1) * x <= -1.56927e-07
+   (        -1,  -0.387797,  -0.778525,          0) * x <= -7.49881
+   (-0.0453616, -0.00253293,          0,         -1) * x <= -0.232077
+
+Overapproximation of achievable values: Polytope with 22 Halfspaces:
+   (        -1,          0,          0,          0) * x <= -4.93636
+   (         0,         -1,          0,          0) * x <= -1.84645
+   (         0,          0,         -1,          0) * x <= -2.09386
+   (         0,          0,          0,         -1) * x <= -1.56927e-07
+   ( -0.808352,          0,  -0.191648,          0) * x <= -4.49218
+   ( -0.839102, -0.0642604,          0, -0.0966378) * x <= -4.33132
+   ( -0.734971,  -0.265029,          0,          0) * x <= -4.20152
+   ( -0.454834,          0,  -0.545166,          0) * x <= -3.4934
+   ( -0.866492,  -0.133508,          0,          0) * x <= -4.61082
+   (  -0.94646,          0,          0, -0.0535403) * x <= -4.6795
+   ( -0.938586, -0.0478209, -0.0117248, -0.00186845) * x <= -4.81501
+   ( -0.940149,  -0.053384,          0, -0.00646732) * x <= -4.80753
+   ( -0.934782, -0.0652176,          0,          0) * x <= -4.80919
+   ( -0.877465,          0,  -0.106708,  -0.015827) * x <= -4.6264
+   ( -0.596504,          0,  -0.403496,          0) * x <= -3.90947
+   ( -0.287345,          0,  -0.712655,          0) * x <= -2.98659
+   (  -0.94118,          0, -0.0561725, -0.00264752) * x <= -4.8092
+   ( -0.770996,          0,  -0.216685, -0.0123185) * x <= -4.36553
+   ( -0.902132,          0, -0.0978683,          0) * x <= -4.72408
+   ( -0.712178,          0,  -0.287822,          0) * x <= -4.23573
+   ( -0.277366,  -0.600128,  -0.122505,          0) * x <= -2.78279
+   (  -0.61248, -0.0734853, -0.0336449,   -0.28039) * x <= -3.29574
+
+22 Pareto optimal points found:
+   (5.014478211, 1.990987528, 2.356801947, 0.9272172105 )
+   (4.953774037, 2.804125648, 2.606825805, 0.9925547288 )
+   (5.226642977,  1.84645307, 2.093856876, 1.569267398e-07 )
+   (5.046572253,  1.85803464, 2.244090423, 0.0005814522311 )
+   (5.023927641, 1.948102908, 2.285452035, 0.02147754708 )
+   ( 5.16862141,  1.84645307, 2.106781654, 6.77144369e-06 )
+   (5.060999488,  1.84645307, 2.211561653, 0.0005814522311 )
+   (5.067432998, 1.857882463, 2.197604761, 0.0005713828737 )
+   (4.997089624, 2.216420771, 2.366528885, 5.205192233e-05 )
+   ( 5.01341351, 2.000931673, 2.320864995, 3.192647464e-07 )
+   (4.963682779,  2.67432863,  2.53904148, 0.0002499955418 )
+   (4.956026449, 2.734595432, 2.620363805, 0.9966190666 )
+   (4.973040415, 2.460740748, 2.579819104, 0.9988090049 )
+   (5.070957364, 2.524423312,   2.5189136, 1.569267398e-07 )
+   (4.944207453, 3.063473388, 2.865363985, 4.062882646e-05 )
+   (4.959250225, 2.717938028, 2.746060625, 0.0002334804147 )
+   (5.122740504, 1.846452849, 2.187202483, 0.001193507211 )
+   (4.992861425, 2.206629357, 2.465286917, 3.930170946e-06 )
+   (5.118775592,  1.84645307, 2.137349423, 1.87210502e-05 )
+   (4.984371405, 2.351439058, 2.416162437, 0.866849894 )
+   (4.936359985, 3.152000319, 2.973334732, 0.9988090049 )
+   (4.945316901, 2.966148304, 2.708334708, 0.9945404217 )
+
+
+Time for model checking: 1149.862s.
+
+Performance statistics:
+  * peak memory usage: 4305MB
+  * CPU time: 1212.422s
+  * wallclock time: 1238.244s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs17_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs3.csl --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 1212.42
+	System time (seconds): 22.89
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 20:38.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4408652
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4240059
+	Voluntary context switches: 94
+	Involuntary context switches: 2117
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

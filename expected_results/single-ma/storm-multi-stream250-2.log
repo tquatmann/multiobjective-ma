@@ -1,0 +1,132 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 12:48:37 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma -const N=250 --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/singleobjective/stream2.csl '--multiobjective:precision' 0.001 -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.235s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 31374 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 31374 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmin=? [true U<=2 "underrun"]) ...
+Preprocessing done in 0.125s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "underrun"])
+
+The query considers 1 objectives:
+--------------------------------------------------------------
+Original: Pmin=? [true U<=2 "underrun"] 	Preprocessed: R[exp]{"obj1"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	94376
+Transitions: 	187751
+Choices: 	125501
+Markovian St.: 	62751
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 31374 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	32123
+Transitions: 	63746
+Choices: 	32372
+Markovian St.: 	31624
+Max. Rate: 	8
+Reward Models:  obj1
+State Labels: 	4 labels
+   * deadl -> 499 item(s)
+   * deadlock -> 0 item(s)
+   * underrun -> 249 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 31375 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 31625 states.
+Final preprocessed model has 31874 actions.
+
+Pareto Curve Approximation Algorithm terminated after 1 refinement steps.
+Solving multi-objective query took 91.223s seconds (consisting of 0.125s seconds for preprocessing and 91.097s seconds for analyzing the preprocessed model).
+Result (for initial states): 0.01993833269
+Time for model checking: 91.224s.
+
+Performance statistics:
+  * peak memory usage: 55MB
+  * CPU time: 91.256s
+  * wallclock time: 91.479s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma -const N=250 --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/singleobjective/stream2.csl --multiobjective:precision 0.001 -tm -stats"
+	User time (seconds): 91.26
+	System time (seconds): 0.03
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:31.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 56828
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 22184
+	Voluntary context switches: 34
+	Involuntary context switches: 100
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

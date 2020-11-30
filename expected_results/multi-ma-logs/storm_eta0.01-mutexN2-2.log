@@ -1,0 +1,212 @@
+Storm 1.6.3
+
+Date: Fri Nov 27 08:50:29 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/mutex/mutex.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/mutex/mutex2.csl -const N=2 '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.005s.
+
+Time for model construction: 0.066s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	10560
+Transitions: 	26820
+Choices: 	23964
+Markovian St.: 	216
+Max. Rate: 	2
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * crit3 -> 896 item(s)
+   * crit2 -> 896 item(s)
+   * crit1 -> 896 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	10560
+Transitions: 	26820
+Choices: 	23964
+Markovian St.: 	216
+Max. Rate: 	2
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * crit3 -> 896 item(s)
+   * crit2 -> 896 item(s)
+   * crit1 -> 896 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmax=? [true U<=1 "crit1"], Pmax=? [true U<=1 "crit2"], Pmax=? [true U<=1 "crit3"]) ...
+Preprocessing done in 0.050s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [true U<=1 "crit1"], Pmax=? [true U<=1 "crit2"], Pmax=? [true U<=1 "crit3"])
+
+The query considers 3 objectives:
+--------------------------------------------------------------
+Original: Pmax=? [true U<=1 "crit1"] 	Preprocessed: R[exp]{"obj1"}max=? [C<=1] 	result bounds: [0, 1]
+Original: Pmax=? [true U<=1 "crit2"] 	Preprocessed: R[exp]{"obj2"}max=? [C<=1] 	result bounds: [0, 1]
+Original: Pmax=? [true U<=1 "crit3"] 	Preprocessed: R[exp]{"obj3"}max=? [C<=1] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	10560
+Transitions: 	26820
+Choices: 	23964
+Markovian St.: 	216
+Max. Rate: 	2
+Reward Models:  none
+State Labels: 	5 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * crit3 -> 896 item(s)
+   * crit2 -> 896 item(s)
+   * crit1 -> 896 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	19872
+Transitions: 	47724
+Choices: 	42540
+Markovian St.: 	480
+Max. Rate: 	2
+Reward Models:  obj3, obj2, obj1
+State Labels: 	6 labels
+   * deadl -> 696 item(s)
+   * crit1 -> 1416 item(s)
+   * crit2 -> 1416 item(s)
+   * crit3 -> 1416 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 361 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 19177 states.
+Final preprocessed model has 41845 actions.
+
+Pareto Curve Approximation Algorithm terminated after 27 refinement steps.
+Solving multi-objective query took 869.211s seconds (consisting of 0.050s seconds for preprocessing and 869.160s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 20 Halfspaces:
+   (         1, 5.62771e-15,          1) * x <= 1.86466
+   (         1,          1,          0) * x <= 1.86466
+   (         1,          0,          1) * x <= 1.86466
+   (9.75247e-15,          1,          1) * x <= 1.86466
+   (         0,          1,          0) * x <= 1
+   (  0.999994,          1,   0.499873) * x <= 2.14443
+   (         1,          0,          0) * x <= 1
+   (  0.999821,          1,   0.499442) * x <= 2.14402
+   (         0,          1,          1) * x <= 1.86466
+   (         1,          1, 7.50391e-15) * x <= 1.86466
+   (  0.999989,          1,   0.999983) * x <= 2.45823
+   (  0.999994,          1,   0.999993) * x <= 2.45824
+   (  0.499868,          1,   0.999996) * x <= 2.14443
+   (         1,   0.499885,   0.999994) * x <= 2.14444
+   (         0,          0,          1) * x <= 1
+   (         1,   0.999997,   0.999998) * x <= 2.45825
+   (  0.499498,          1,   0.999848) * x <= 2.14407
+   (  0.999821,   0.499427,          1) * x <= 2.14401
+   (         1,    0.99998,   0.999989) * x <= 2.45823
+   (         1, 5.97439e-11,          1) * x <= 1.86466
+
+Overapproximation of achievable values: Polytope with 27 Halfspaces:
+   (         1,          0,          0) * x <= 1.00519
+   (         0,          1,          0) * x <= 1.00519
+   (         0,          0,          1) * x <= 1.00519
+   (  0.309468,   0.367706,   0.322826) * x <= 0.833091
+   (   0.52096,  0.0630984,   0.415942) * x <= 0.919398
+   (  0.539507,   0.456686, 0.00380704) * x <= 0.940185
+   (         0,   0.199575,   0.800425) * x <= 0.97727
+   (  0.241338,          0,   0.758662) * x <= 0.971468
+   (  0.268941,   0.731059,          0) * x <= 0.96764
+   (  0.192805,   0.192811,   0.614384) * x <= 0.899023
+   ( 0.0445173,   0.477722,   0.477761) * x <= 0.919256
+   (         0,    0.55563,    0.44437) * x <= 0.943556
+   (  0.300011,   0.125523,   0.574466) * x <= 0.907551
+   (       0.5,          0,        0.5) * x <= 0.936007
+   (  0.300051,   0.574439,    0.12551) * x <= 0.907551
+   (       0.5,        0.5,          0) * x <= 0.936007
+   (  0.353005,   0.323513,   0.323482) * x <= 0.82775
+   (  0.347801,   0.304336,   0.347862) * x <= 0.830772
+   (  0.330554,   0.380281,   0.289165) * x <= 0.839356
+   (6.75311e-15,        0.5,        0.5) * x <= 0.936007
+   (         0,        0.5,        0.5) * x <= 0.936007
+   ( 0.0892195,   0.486181,   0.424599) * x <= 0.90663
+   (  0.199974,   0.399969,   0.400057) * x <= 0.860932
+   (  0.333217,   0.333326,   0.333456) * x <= 0.822459
+   (   0.38029,   0.289157,   0.330554) * x <= 0.839359
+   (  0.400153,   0.400099,   0.199748) * x <= 0.861014
+   (   0.40009,   0.199831,   0.400079) * x <= 0.86098
+
+16 Pareto optimal points found:
+   (0.8307798902, 0.6274709309,           1 )
+   (0.6274714683, 0.830779967,           1 )
+   (          1, 0.6274693088, 0.8307796585 )
+   (0.8646647168, 0.2637188059,           1 )
+   (0.8646647168, 0.5596356572,           1 )
+   (0.8307796585,           1, 0.6274693088 )
+   (          1, 0.8307798902, 0.6274709309 )
+   (          1, 0.8646647168, 0.559684073 )
+   (0.5596427911,           1, 0.8646647168 )
+   (0.8646647168,           1, 0.2637304665 )
+   (0.8646647168,           1, 0.5596356572 )
+   (          1, 0.5596283239, 0.8646647168 )
+   (0.263699699, 0.8646647168,           1 )
+   (          1, 0.559684073, 0.8646647168 )
+   (0.6274703918,           1, 0.8307798132 )
+   (0.559684073, 0.8646647168,           1 )
+
+
+Time for model checking: 869.211s.
+
+Performance statistics:
+  * peak memory usage: 42MB
+  * CPU time: 867.151s
+  * wallclock time: 869.288s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/mutex/mutex.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/mutex/mutex2.csl -const N=2 --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 867.15
+	System time (seconds): 0.07
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:29.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 44016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 64496
+	Voluntary context switches: 123
+	Involuntary context switches: 1119
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

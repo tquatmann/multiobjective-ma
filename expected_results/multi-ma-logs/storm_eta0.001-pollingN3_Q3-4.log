@@ -1,0 +1,133 @@
+Storm 1.6.3
+
+Date: Fri Nov 27 11:12:36 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling4.csl -const 'N=3,Q=3' '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.012s.
+
+Time for model construction: 0.047s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"], Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 0.052s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"processedjobs1"}max=? [F "q1full"], R[exp]{"processedjobs2"}max=? [F "q2full"], Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+The query considers 4 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"processedjobs1"}max=? [F "q1full"] 	Preprocessed: R[exp]{"obj1"}max=? [C] 	result bounds: >=0
+Original: R[exp]{"processedjobs2"}max=? [F "q2full"] 	Preprocessed: R[exp]{"obj2"}max=? [C] 	result bounds: >=0
+Original: Pmin=? [true U<=2 "q1full"] 	Preprocessed: R[exp]{"obj3"}min=? [C<=2] 	result bounds: [0, 1]
+Original: Pmin=? [true U<=2 "q2full"] 	Preprocessed: R[exp]{"obj4"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  processedjobs2, processedjobs1
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	14283
+Transitions: 	33108
+Choices: 	25671
+Markovian St.: 	7923
+Max. Rate: 	14
+Reward Models:  obj2, obj1, obj4, obj3
+State Labels: 	5 labels
+   * deadl -> 4293 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 5697 item(s)
+   * q2full -> 5697 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 3631 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 9991 states.
+Final preprocessed model has 21379 actions.
+
+ERROR: The program received signal 15 and will be aborted in 3s.
+Received signal 15
+Command exited with non-zero status 124
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling4.csl -const N=3,Q=3 --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 7181.27
+	System time (seconds): 0.08
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:00:00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 38920
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 32413
+	Voluntary context switches: 120
+	Involuntary context switches: 6743
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 124

@@ -1,0 +1,126 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 10:57:35 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8_pareto.pctl '--multiobjective:precision' 0.001 -tm -stats
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.016s.
+
+Time for model construction: 0.121s.
+
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	17221
+Transitions: 	52163
+Choices: 	50838
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (error = 0) -> 16506 item(s)
+   * ((l = 4) & (ip = 1)) -> 48 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmax=? [F ((l = 4) & (ip = 1))], Pmax=? [G (error = 0)]) ...
+Preprocessing done in 0.040s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [F ((l = 4) & (ip = 1))], Pmax=? [G (error = 0)])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: Pmax=? [F ((l = 4) & (ip = 1))] 	Preprocessed: R[exp]{"obj1"}max=? [C] 	result bounds: [0, 1]
+Original: Pmax=? [G (error = 0)] 	Preprocessed: R[exp]{"obj2"}min=? [C] (Complementary event) 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	17221
+Transitions: 	52163
+Choices: 	50838
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * (error = 0) -> 16506 item(s)
+   * ((l = 4) & (ip = 1)) -> 48 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	MDP (sparse)
+States: 	10686
+Transitions: 	31021
+Choices: 	29696
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 843 item(s)
+   * ((l = 4) & (ip = 1)) -> 48 item(s)
+   * (error = 0) -> 10242 item(s)
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Weight Vector Checker Statistics:
+Final preprocessed model has 9844 states.
+Final preprocessed model has 28854 actions.
+
+Pareto Curve Approximation Algorithm terminated after 2 refinement steps.
+Solving multi-objective query took 0.825s seconds (consisting of 0.040s seconds for preprocessing and 0.784s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.000307579
+   (         0,          1) * x <= 1
+   (         1,          1) * x <= 1
+
+Overapproximation of achievable values: Polytope with 2 Halfspaces:
+   (         1,          0) * x <= 0.000307579
+   (         0,          1) * x <= 1
+
+2 Pareto optimal points found:
+   (          0,           1 )
+   (0.0003075787402, 0.9996924213 )
+
+
+Time for model checking: 0.826s.
+
+Performance statistics:
+  * peak memory usage: 38MB
+  * CPU time: 0.980s
+  * wallclock time: 0.990s
+	Command being timed: "/home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8.nm --prop /home/tq429871/git/multiobjective-ma/slurm/../models/mdp/zeroconf/zeroconf8_pareto.pctl --multiobjective:precision 0.001 -tm -stats"
+	User time (seconds): 0.98
+	System time (seconds): 0.01
+	Percent of CPU this job got: 91%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 39032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 10828
+	Voluntary context switches: 54
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

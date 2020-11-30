@@ -1,0 +1,159 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 17:11:42 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream3.csl -const N=1000 '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 3.733s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1502501
+Transitions: 	3001001
+Choices: 	2002001
+Markovian St.: 	1001001
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 500499 item(s)
+   * running -> 500500 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1502501
+Transitions: 	3001001
+Choices: 	2002001
+Markovian St.: 	1001001
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 500499 item(s)
+   * running -> 500500 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmax=? [true U<=1/2 "running"], Pmin=? [true U<=2 "underrun"]) ...
+Preprocessing done in 2.589s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmax=? [true U<=1/2 "running"], Pmin=? [true U<=2 "underrun"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: Pmax=? [true U<=1/2 "running"] 	Preprocessed: R[exp]{"obj1"}max=? [C<=1/2] 	result bounds: [0, 1]
+Original: Pmin=? [true U<=2 "underrun"] 	Preprocessed: R[exp]{"obj2"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1502501
+Transitions: 	3001001
+Choices: 	2002001
+Markovian St.: 	1001001
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 500499 item(s)
+   * running -> 500500 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	503499
+Transitions: 	1004997
+Choices: 	504498
+Markovian St.: 	501499
+Max. Rate: 	8
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 1998 item(s)
+   * deadlock -> 0 item(s)
+   * running -> 500499 item(s)
+   * underrun -> 999 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 500501 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 501502 states.
+Final preprocessed model has 502501 actions.
+
+ERROR: The program received signal 15 and will be aborted in 3s.
+ WARN (StandardMaPcaaWeightVectorChecker.cpp:139): Time-bounded reachability computation aborted.
+ WARN (SparsePcaaQuery.cpp:119): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 0.0052768.
+ERROR (SparsePcaaParetoQuery.cpp:93): Could not reach the desired precision: Termination requested or maximum number of refinement steps exceeded.
+Pareto Curve Approximation Algorithm terminated after 3 refinement steps.
+Solving multi-objective query took 7196.236s seconds (consisting of 2.589s seconds for preprocessing and 7193.630s seconds for analyzing the preprocessed model).
+Result till abort (for initial states): 
+Underapproximation of achievable values: Polytope with 4 Halfspaces:
+   (         0,         -1) * x <= -0.01141
+   (  0.412351,         -1) * x <= -0.01141
+   (  0.793593,         -1) * x <= -0.00386109
+   (         1,          0) * x <= 0.864665
+
+Overapproximation of achievable values: Polytope with 3 Halfspaces:
+   (         1,          0) * x <= 0.865301
+   (         0,         -1) * x <= -0.0189386
+   (   0.44246,   -0.55754) * x <= -0.00215271
+
+3 Pareto optimal points found:
+   (0.8646647168, 0.6900529524 )
+   (0.01980094059, 0.01957497984 )
+   (          0, 0.01141004775 )
+
+
+Time for model checking: 7196.236s.
+
+Performance statistics:
+  * peak memory usage: 490MB
+  * CPU time: 7182.642s
+  * wallclock time: 7199.995s
+Command exited with non-zero status 124
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream3.csl -const N=1000 --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 7182.64
+	System time (seconds): 0.33
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:00:00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 502136
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 269602
+	Voluntary context switches: 94
+	Involuntary context switches: 3320
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 124

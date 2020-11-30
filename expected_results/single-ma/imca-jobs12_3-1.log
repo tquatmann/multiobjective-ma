@@ -1,0 +1,51 @@
+ ------------------------------------------------------------------- 
+|                  Interactive Markov Chain Analyzer                |
+|                        IMCA Version 1.6 beta                      |
+|             Binary build date: Nov  9 2020 @ 12:11:17             |
+|                using SoPlex "http://soplex.zib.de/"               |
+|                                                                   |
+|                  Copyright (C) RWTH Aachen, 2012.                 |
+|          Copyright (C) University of Twente, 2013-2014.           |
+|                         Author: Dennis Guck                       |
+|           IMCA is distributed under the GPL conditions            |
+|            (GPL stands for GNU General Public License)            |
+|          This program comes with ABSOLUTELY NO WARRANTY.          |
+|   This is free software, and you are welcome to redistribute it   |
+ ------------------------------------------------------------------- 
+
+Loading the '/home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/imca/jobs12_3-1.ma' file, please wait.
+Maximum State Reward: 0
+#States: 116814    #MS: 112719    #PS: 4095    #ND: 3797
+#Initials: 1    #Goals: 1    #Transitions: 450783
+The occupied space is 26517072 Bytes (~25.288651 MB).
+
+
+Compute minimal expected time, please wait.
+LP solved to optimality.
+
+Minimal expected time: 2.712648718
+
+Computation Time: 806.577208 seconds
+	Command being timed: "timeout 7200 /home/tq429871/imca/bin/imca /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/imca/jobs12_3-1.ma -min -et"
+	User time (seconds): 803.57
+	System time (seconds): 2.29
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:27.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 468256
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 342100
+	Voluntary context switches: 34
+	Involuntary context switches: 1372
+	Swaps: 0
+	File system inputs: 15248
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

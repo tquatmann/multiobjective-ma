@@ -1,0 +1,201 @@
+Storm 1.6.3
+
+Date: Fri Nov 27 00:04:51 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream1.csl -const N=30 '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.020s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  numrestarts, buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  numrestarts, buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(R[exp]{"buffering"}min=? [F "done"], R[exp]{"numrestarts"}min=? [F "done"]) ...
+Preprocessing done in 0.003s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(R[exp]{"buffering"}min=? [F "done"], R[exp]{"numrestarts"}min=? [F "done"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: R[exp]{"buffering"}min=? [F "done"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: R[exp]{"numrestarts"}min=? [F "done"] 	Preprocessed: R[exp]{"obj2"}min=? [C] 	result bounds: >=0
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 2.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  numrestarts, buffering
+State Labels: 	3 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * done -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1425
+Transitions: 	2730
+Choices: 	1860
+Markovian St.: 	930
+Max. Rate: 	8
+Reward Models:  obj2, obj1
+State Labels: 	4 labels
+   * deadl -> 31 item(s)
+   * deadlock -> 0 item(s)
+   * done -> 0 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 901 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 1395 states.
+Final preprocessed model has 1830 actions.
+
+Pareto Curve Approximation Algorithm terminated after 20 refinement steps.
+Solving multi-objective query took 0.132s seconds (consisting of 0.003s seconds for preprocessing and 0.128s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 21 Halfspaces:
+   ( -0.474006,         -1) * x <= -1.44258
+   (        -1,  -0.215961) * x <= -2.0697
+   ( -0.839569,         -1) * x <= -2.28864
+   (        -1,  -0.471499) * x <= -2.32041
+   (        -1,  -0.626063) * x <= -2.43545
+   ( -0.236924,         -1) * x <= -0.828195
+   ( -0.139403,         -1) * x <= -0.54748
+   (        -1,          0) * x <= -1.53867
+   (        -1,  -0.102778) * x <= -1.89102
+   (         0,         -1) * x <= -0.0434117
+   ( -0.676389,         -1) * x <= -1.9234
+   (        -1,  -0.353222) * x <= -2.22297
+   (-0.00148587,         -1) * x <= -0.0533993
+   (        -1, -0.0299407) * x <= -1.69301
+   (        -1, -0.0396049) * x <= -1.72779
+   (        -1,  -0.162411) * x <= -1.9889
+   (        -1, -0.0638991) * x <= -1.79489
+   (-0.0665096,         -1) * x <= -0.309647
+   (        -1,  -0.919136) * x <= -2.60702
+   ( -0.334995,         -1) * x <= -1.09144
+   (-0.0254937,         -1) * x <= -0.157943
+
+Overapproximation of achievable values: Polytope with 20 Halfspaces:
+   (        -1,          0) * x <= -1.53867
+   (         0,         -1) * x <= -0.0434117
+   ( -0.496514,  -0.503486) * x <= -1.31503
+   ( -0.876227,  -0.123773) * x <= -1.71231
+   (-0.0802237,  -0.919776) * x <= -0.34696
+   ( -0.713824,  -0.286176) * x <= -1.61485
+   ( -0.245798,  -0.754202) * x <= -0.804761
+   ( -0.950324, -0.0496757) * x <= -1.67521
+   ( -0.338429,  -0.661571) * x <= -1.01339
+   ( -0.795909,  -0.204091) * x <= -1.68325
+   (  -0.58599,   -0.41401) * x <= -1.45475
+   (-0.0140328,  -0.985967) * x <= -0.107377
+   ( -0.146872,  -0.853128) * x <= -0.547505
+   ( -0.967751, -0.0322492) * x <= -1.65019
+   ( -0.915135, -0.0848647) * x <= -1.70781
+   (-0.0401869,  -0.959813) * x <= -0.20973
+   ( -0.414555,  -0.585445) * x <= -1.1676
+   ( -0.635141,  -0.364859) * x <= -1.52246
+   ( -0.831652,  -0.168348) * x <= -1.70428
+   ( -0.287103,  -0.712897) * x <= -0.900053
+
+20 Pareto optimal points found:
+   (3.698663004, 0.06364992741 )
+   (1.618408665, 2.761932309 )
+   (4.354547081, 0.04692899065 )
+   (6.721724127, 0.04341168215 )
+   (1.722320022, 1.641408378 )
+   (2.684185614, 0.1922472229 )
+   (1.585233481, 3.599585586 )
+   (2.238215033, 0.4095000159 )
+   (1.743861911,  1.50877055 )
+   ( 2.37578837, 0.316446906 )
+   (2.526051584, 0.2452212945 )
+   (2.068920837, 0.5854448057 )
+   (2.205029242, 0.4373617779 )
+   (3.262761543, 0.09264155942 )
+   (1.636905179,  2.47246813 )
+   (1.969494322, 0.7442572259 )
+   (2.878507528, 0.1462076889 )
+   ( 1.93195871, 0.8238663343 )
+   (1.828549812, 1.116625284 )
+   (1.538672595, 5.154690381 )
+
+
+Time for model checking: 0.132s.
+
+Performance statistics:
+  * peak memory usage: 31MB
+  * CPU time: 0.177s
+  * wallclock time: 0.164s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream1.csl -const N=30 --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 0.17
+	System time (seconds): 0.02
+	Percent of CPU this job got: 85%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 33120
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 9501
+	Voluntary context switches: 113
+	Involuntary context switches: 3
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

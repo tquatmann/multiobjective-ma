@@ -1,0 +1,164 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 18:16:35 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling3.csl -const 'N=3,Q=3' '--multiobjective:precision' 0.01 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.003s.
+
+Time for model construction: 0.046s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"]) ...
+Preprocessing done in 0.032s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(Pmin=? [true U<=2 "q1full"], Pmin=? [true U<=2 "q2full"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: Pmin=? [true U<=2 "q1full"] 	Preprocessed: R[exp]{"obj1"}min=? [C<=2] 	result bounds: [0, 1]
+Original: Pmin=? [true U<=2 "q2full"] 	Preprocessed: R[exp]{"obj2"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 0.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	9522
+Transitions: 	23528
+Choices: 	17287
+Markovian St.: 	4801
+Max. Rate: 	14
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * q2full -> 5373 item(s)
+   * q1full -> 5373 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	14283
+Transitions: 	33108
+Choices: 	25671
+Markovian St.: 	7923
+Max. Rate: 	14
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 4293 item(s)
+   * deadlock -> 0 item(s)
+   * q1full -> 5697 item(s)
+   * q2full -> 5697 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 3631 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 9991 states.
+Final preprocessed model has 21379 actions.
+
+Pareto Curve Approximation Algorithm terminated after 7 refinement steps.
+Solving multi-objective query took 358.782s seconds (consisting of 0.032s seconds for preprocessing and 358.749s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 7 Halfspaces:
+   ( -0.409891,         -1) * x <= -0.946453
+   (         0,         -1) * x <= -0.736058
+   ( -0.743848,         -1) * x <= -1.09963
+   (        -1,  -0.846504) * x <= -1.08073
+   (        -1, -0.0253075) * x <= -0.405904
+   ( -0.563199,         -1) * x <= -1.02046
+   (        -1,          0) * x <= -0.383887
+
+Overapproximation of achievable values: Polytope with 7 Halfspaces:
+   (        -1,          0) * x <= -0.377523
+   (         0,         -1) * x <= -0.730707
+   ( -0.388987,  -0.611013) * x <= -0.638567
+   ( -0.639334,  -0.360666) * x <= -0.537921
+   ( -0.191551,  -0.808449) * x <= -0.6881
+   (  -0.47524,   -0.52476) * x <= -0.606897
+   ( -0.333696,  -0.666304) * x <= -0.65513
+
+6 Pareto optimal points found:
+   (0.3838870767, 0.8699665913 )
+   (0.3851071509, 0.8217566683 )
+   (0.4382171705, 0.7736585681 )
+   (0.4047475983, 0.7985548324 )
+   (0.4827452651, 0.7485803803 )
+   (0.5132962827, 0.7360577981 )
+
+
+Time for model checking: 358.783s.
+
+Performance statistics:
+  * peak memory usage: 35MB
+  * CPU time: 357.998s
+  * wallclock time: 358.835s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/polling/polling3.csl -const N=3,Q=3 --multiobjective:precision 0.01 -stats -tm"
+	User time (seconds): 358.00
+	System time (seconds): 0.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:58.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 36008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 21427
+	Voluntary context switches: 35
+	Involuntary context switches: 125
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,138 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 18:58:25 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs17_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs3.csl '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.026s.
+
+Time for model construction: 86.125s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"]) ...
+Preprocessing done in 21.418s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "all_jobs_finished"], T[exp]min=? [F "half_of_jobs_finished"], R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"], Pmin=? [F "slowest_before_fastest"])
+
+The query considers 4 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: T[exp]min=? [F "half_of_jobs_finished"] 	Preprocessed: R[exp]{"obj2"}min=? [C] 	result bounds: >=0
+Original: R[exp]{"avg_waiting_time"}min=? [F "all_jobs_finished"] 	Preprocessed: R[exp]{"obj3"}min=? [C] 	result bounds: >=0
+Original: Pmin=? [F "slowest_before_fastest"] 	Preprocessed: R[exp]{"obj4"}min=? [C] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 4.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	4587537
+Transitions: 	13369379
+Choices: 	8912931
+Markovian St.: 	4456466
+Max. Rate: 	5.9
+Reward Models:  avg_waiting_time
+State Labels: 	5 labels
+   * deadlock -> 1 item(s)
+   * init -> 1 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * half_of_jobs_finished -> 704990 item(s)
+   * all_jobs_finished -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	5480480
+Transitions: 	15949890
+Choices: 	10633282
+Markovian St.: 	5316642
+Max. Rate: 	5.9
+Reward Models:  obj4, obj3, obj2, obj1
+State Labels: 	6 labels
+   * deadl -> 2 item(s)
+   * all_jobs_finished -> 2 item(s)
+   * half_of_jobs_finished -> 891605 item(s)
+   * deadlock -> 2 item(s)
+   * slowest_before_fastest -> 1138689 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 5316641 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 5480479 states.
+Final preprocessed model has 10633281 actions.
+
+ WARN (SparsePcaaQuery.cpp:119): Numerical issues: The overapproximation would not contain the underapproximation. Hence, a halfspace is shifted by 2.64698e-23.
+ERROR: The program received signal 15 and will be aborted in 3s.
+Received signal 15
+Command exited with non-zero status 124
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs17_2.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/jobs/jobs3.csl --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 7100.82
+	System time (seconds): 82.08
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:00:00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4408200
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 15943138
+	Voluntary context switches: 129
+	Involuntary context switches: 3993
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 124

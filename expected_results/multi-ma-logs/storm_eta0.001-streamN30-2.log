@@ -1,0 +1,279 @@
+Storm 1.6.3
+
+Date: Thu Nov 26 11:05:00 2020
+Command line arguments: --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream2.csl -const N=30 '--multiobjective:precision' 0.001 -stats -tm
+Current working directory: /rwthfs/rz/cluster/home/tq429871/git/multiobjective-ma/slurm
+
+Time for model input parsing: 0.002s.
+
+Time for model construction: 0.021s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 464 item(s)
+   * running -> 465 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Time for model preprocessing: 0.000s.
+
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 464 item(s)
+   * running -> 465 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Model checking property "1": multi(T[exp]min=? [F "running"], Pmin=? [true U<=2 "underrun"]) ...
+Preprocessing done in 0.002s seconds.
+ Result: 
+---------------------------------------------------------------------------------------------------------------------------------------
+                                                       Multi-objective Query                                              
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Original Formula: 
+--------------------------------------------------------------
+	multi(T[exp]min=? [F "running"], Pmin=? [true U<=2 "underrun"])
+
+The query considers 2 objectives:
+--------------------------------------------------------------
+Original: T[exp]min=? [F "running"] 	Preprocessed: R[exp]{"obj1"}min=? [C] 	result bounds: >=0
+Original: Pmin=? [true U<=2 "underrun"] 	Preprocessed: R[exp]{"obj2"}min=? [C<=2] 	result bounds: [0, 1]
+Number of Long-Run-Average Reward Objectives (after preprocessing): 0.
+Number of Total Reward Objectives (after preprocessing): 1.
+--------------------------------------------------------------
+
+Original Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	1426
+Transitions: 	2731
+Choices: 	1861
+Markovian St.: 	931
+Max. Rate: 	8
+Reward Models:  none
+State Labels: 	4 labels
+   * deadlock -> 0 item(s)
+   * init -> 1 item(s)
+   * underrun -> 464 item(s)
+   * running -> 465 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+Preprocessed Model Information:
+-------------------------------------------------------------- 
+Model type: 	Markov Automaton (sparse)
+States: 	554
+Transitions: 	1047
+Choices: 	583
+Markovian St.: 	494
+Max. Rate: 	8
+Reward Models:  obj2, obj1
+State Labels: 	5 labels
+   * deadl -> 58 item(s)
+   * deadlock -> 0 item(s)
+   * running -> 464 item(s)
+   * underrun -> 29 item(s)
+   * init -> 1 item(s)
+Choice Labels: 	none
+-------------------------------------------------------------- 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Final preprocessed model has 466 Markovian states.
+Weight Vector Checker Statistics:
+Final preprocessed model has 496 states.
+Final preprocessed model has 525 actions.
+
+Pareto Curve Approximation Algorithm terminated after 46 refinement steps.
+Solving multi-objective query took 241.306s seconds (consisting of 0.002s seconds for preprocessing and 241.303s seconds for analyzing the preprocessed model).
+Result (for initial states): 
+Underapproximation of achievable values: Polytope with 45 Halfspaces:
+   (        -1,  -0.966035) * x <= -1.00652
+   (        -1,  -0.932442) * x <= -0.981262
+   (  -0.71025,         -1) * x <= -0.860553
+   (  -0.23792,         -1) * x <= -0.355245
+   ( -0.290647,         -1) * x <= -0.420562
+   ( -0.212168,         -1) * x <= -0.322473
+   (  -0.26466,         -1) * x <= -0.38867
+   ( -0.120837,         -1) * x <= -0.200812
+   (  -0.18782,         -1) * x <= -0.290912
+   ( -0.164558,         -1) * x <= -0.260191
+   ( -0.433797,         -1) * x <= -0.585951
+   ( -0.339633,         -1) * x <= -0.478997
+   (-0.0237774,         -1) * x <= -0.0588695
+   ( -0.487534,         -1) * x <= -0.644494
+   (-0.0949005,         -1) * x <= -0.164563
+   (-0.0114009,         -1) * x <= -0.0389869
+   ( -0.463486,         -1) * x <= -0.618581
+   (-0.00423024,         -1) * x <= -0.0270399
+   (-0.0664827,         -1) * x <= -0.123566
+   (-0.000219114,         -1) * x <= -0.0200467
+   ( -0.142166,         -1) * x <= -0.230059
+   ( -0.507091,         -1) * x <= -0.665098
+   (        -1,  -0.664852) * x <= -0.773538
+   (        -1,  -0.850883) * x <= -0.918673
+   (         0,         -1) * x <= -0.019575
+   ( -0.835489,         -1) * x <= -0.955031
+   ( -0.315401,         -1) * x <= -0.450374
+   ( -0.952317,         -1) * x <= -1.01571
+   (        -1,          0) * x <= -0.25
+   ( -0.696863,         -1) * x <= -0.848309
+   ( -0.991869,         -1) * x <= -1.02906
+   ( -0.724235,         -1) * x <= -0.872858
+   (  -0.80844,         -1) * x <= -0.935748
+   ( -0.042605,         -1) * x <= -0.0879561
+   ( -0.733757,         -1) * x <= -0.880468
+   ( -0.537869,         -1) * x <= -0.696278
+   ( -0.901327,         -1) * x <= -0.994718
+   ( -0.605386,         -1) * x <= -0.761328
+   ( -0.523616,         -1) * x <= -0.682079
+   ( -0.924019,         -1) * x <= -1.00478
+   ( -0.666271,         -1) * x <= -0.819439
+   ( -0.397717,         -1) * x <= -0.545582
+   ( -0.867046,         -1) * x <= -0.975801
+   ( -0.882531,         -1) * x <= -0.985033
+   ( -0.365285,         -1) * x <= -0.508714
+
+Overapproximation of achievable values: Polytope with 46 Halfspaces:
+   (        -1,          0) * x <= -0.25
+   (         0,         -1) * x <= -0.0189386
+   (  -0.34004,   -0.65996) * x <= -0.443994
+   ( -0.523995,  -0.476005) * x <= -0.504064
+   (-0.0995809,  -0.900419) * x <= -0.167348
+   ( -0.450011,  -0.549989) * x <= -0.518033
+   ( -0.232503,  -0.767497) * x <= -0.333629
+   ( -0.477077,  -0.522923) * x <= -0.522262
+   ( -0.406341,  -0.593659) * x <= -0.496205
+   ( -0.936759, -0.0632407) * x <= -0.283903
+   (-0.0160967,  -0.983903) * x <= -0.0455716
+   ( -0.166455,  -0.833545) * x <= -0.254778
+   ( -0.293682,  -0.706318) * x <= -0.399153
+   ( -0.422325,  -0.577675) * x <= -0.506932
+   ( -0.492324,  -0.507676) * x <= -0.518189
+   ( -0.641823,  -0.358177) * x <= -0.442035
+   (-0.0511432,  -0.948857) * x <= -0.098836
+   ( -0.466499,  -0.533501) * x <= -0.522482
+   (  -0.20066,   -0.79934) * x <= -0.296539
+   ( -0.357444,  -0.642556) * x <= -0.458331
+   (  -0.26021,   -0.73979) * x <= -0.36423
+   ( -0.132796,  -0.867204) * x <= -0.211745
+   ( -0.322384,  -0.677616) * x <= -0.427646
+   ( -0.504512,  -0.495488) * x <= -0.51331
+   (-0.0741979,  -0.925802) * x <= -0.132053
+   ( -0.560765,  -0.439235) * x <= -0.48513
+   ( -0.430976,  -0.569024) * x <= -0.510509
+   ( -0.417036,  -0.582964) * x <= -0.503842
+   ( -0.460111,  -0.539889) * x <= -0.521109
+   ( -0.483738,  -0.516262) * x <= -0.520869
+   ( -0.471278,  -0.528722) * x <= -0.522761
+   (-0.0315085,  -0.968491) * x <= -0.0694991
+   (-0.00200294,  -0.997997) * x <= -0.0224822
+   ( -0.275316,  -0.724684) * x <= -0.380213
+   (  -0.18352,   -0.81648) * x <= -0.275855
+   ( -0.217347,  -0.782653) * x <= -0.316206
+   (  -0.14967,   -0.85033) * x <= -0.233564
+   ( -0.309973,  -0.690027) * x <= -0.415536
+   ( -0.346787,  -0.653213) * x <= -0.449808
+   ( -0.116071,  -0.883929) * x <= -0.189633
+   ( -0.246636,  -0.753364) * x <= -0.349451
+   ( -0.389686,  -0.610314) * x <= -0.483478
+   (-0.00729713,  -0.992703) * x <= -0.031372
+   ( -0.332306,  -0.667694) * x <= -0.436996
+   ( -0.512756,  -0.487244) * x <= -0.509562
+   ( -0.413207,  -0.586793) * x <= -0.501251
+
+44 Pareto optimal points found:
+   (0.5962564779, 0.4588189212 )
+   (1.136754124, 0.09347555849 )
+   (0.9544404802, 0.1835237012 )
+   (0.5152172708, 0.5303384942 )
+   (0.4435508246, 0.5949333725 )
+   (0.9634709746, 0.1780567678 )
+   (0.7991606491, 0.2940775525 )
+   (0.3374385368, 0.6943606884 )
+   (0.6581433597, 0.405160134 )
+   (0.7402083861, 0.3373342116 )
+   (1.397594527, 0.0319307456 )
+   (1.345721326, 0.03874234441 )
+   ( 1.29626386, 0.04744757461 )
+   (0.9436718561, 0.190698518 )
+   (0.2657025007, 0.7674033117 )
+   (1.320621598, 0.0428727017 )
+   (0.3861190782, 0.6480014006 )
+   (1.204355388, 0.07051959932 )
+   (1.249953804, 0.0578566926 )
+   (0.9147010995, 0.2108871767 )
+   (1.227244912, 0.06386683263 )
+   (1.442661743, 0.02765384561 )
+   (0.7129070882, 0.3594056606 )
+   (1.027580857, 0.144021213 )
+   (0.8798004798, 0.2356753336 )
+   (1.158510114, 0.08552842847 )
+   (1.544891113, 0.02213606566 )
+   (0.2969448789, 0.7345250883 )
+   (1.371197475, 0.03512049048 )
+   (1.606486805, 0.02067148156 )
+   (       0.25, 0.7874504438 )
+   (1.099032158, 0.1091944009 )
+   (1.077575392, 0.119139315 )
+   (0.2801120706, 0.7519497332 )
+   (1.118881999, 0.1005836026 )
+   (1.743451204, 0.01966468778 )
+   (1.181173791, 0.07783108788 )
+   (0.9962085368, 0.1604482519 )
+   (1.272616901, 0.0524646937 )
+   (1.053549524, 0.1308527409 )
+   (1.666090688, 0.01999194146 )
+   (1.491338978, 0.02441765314 )
+   (2.152834427, 0.01957498617 )
+   (0.2548435559, 0.7801652811 )
+
+
+Time for model checking: 241.306s.
+
+Performance statistics:
+  * peak memory usage: 32MB
+  * CPU time: 240.781s
+  * wallclock time: 241.353s
+	Command being timed: "timeout 7200 /home/tq429871/storm/build/bin/storm --prism /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream.ma --prop /home/tq429871/git/multiobjective-ma/slurm/../models/ma/stream/stream2.csl -const N=30 --multiobjective:precision 0.001 -stats -tm"
+	User time (seconds): 240.78
+	System time (seconds): 0.02
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:01.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 33500
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 12218
+	Voluntary context switches: 37
+	Involuntary context switches: 140
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
